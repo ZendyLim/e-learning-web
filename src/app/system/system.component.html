@@ -1,3 +1,8 @@
-<p>
-  system works!
-</p>
+<div fxLayout="row" id="system-container">
+  <div id="sidebar-container" fxFlex="15">
+    <app-sidebar></app-sidebar>
+  </div>
+  <div id="content-container" fxFlex>
+    <router-outlet></router-outlet>
+  </div>
+</div>

@@ -1,9 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+
+import {FlexLayoutModule} from "@angular/flex-layout";
 
 import { AppComponent } from './app.component';
-import { RouterModule, Routes } from '@angular/router';
 
 const appRoutes: Routes = [
   { path: '', loadChildren: './system/system.module#SystemModule' },
@@ -19,6 +21,7 @@ const appRoutes: Routes = [
     BrowserModule,
 		BrowserAnimationsModule,
 		RouterModule.forRoot(appRoutes),
+    FlexLayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

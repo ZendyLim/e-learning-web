@@ -1,0 +1,9 @@
+<div fxLayout="column" id="user-feature-index-container">
+  <div>
+    <app-admin-user-index-search-bar></app-admin-user-index-search-bar>
+  </div>
+  <div id="user-table-container" fxFlexAlign="center">
+    <app-admin-user-index-table [data]="data"></app-admin-user-index-table>
+  </div>
+  <button mat-fab id="user-add-button" color="primary" routerLink="/admin/user/add">+</button>
+</div>

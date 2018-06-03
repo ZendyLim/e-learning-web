@@ -1,20 +1,24 @@
-<form class="login-form">
-  <div class="login-header">
-    CORPORATE
-  </div>
-  <div ng-app="LoginForm">
-    <div class="login-container">
-      <mat-form-field appearance="outline" class="login-field">
+<form [formGroup]="loginForm" id="login-form-container" fxLayout="column" fxFlexAlign="center"
+      (submit)="login()">
+  <div fxFlex="33"></div>
+  <div fxLayout="column" id="form-container">
+    <div fxLayout="row" fxFlexAlign="center">
+      <mat-form-field>
         <mat-label>Username</mat-label>
-        <input matInput placeholder="Username">
+        <input matInput placeholder="Username" formControlName="username">
       </mat-form-field>
-    
-      <mat-form-field appearance="outline" class="login-field">
-        <mat-label>Password</mat-label>
-        <input matInput placeholder="Password">
-      </mat-form-field>
+    </div>
 
-      <button mat-raised-button>LOGIN</button>
+    <div fxLayout="row" fxFlexAlign="center">
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput placeholder="Password" type="password" formControlName="password">
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxFlexAlign="center">
+      <button type="submit" mat-button color="primary">LOGIN</button>
     </div>
   </div>
+  <div fxFlex="33"></div>
 </form>
