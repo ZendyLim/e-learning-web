@@ -5,5 +5,5 @@
   <div id="user-table-container" fxFlexAlign="center">
     <app-admin-user-index-table [data]="data"></app-admin-user-index-table>
   </div>
-  <button mat-fab id="user-add-button" color="primary" routerLink="/admin/user/add">+</button>
+  <button mat-fab id="user-add-button" color="primary" (click)="openCreateDialog()">+</button>
 </div>

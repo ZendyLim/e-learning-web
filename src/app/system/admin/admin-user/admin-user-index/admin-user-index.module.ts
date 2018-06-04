@@ -6,7 +6,7 @@ import { AdminUserIndexSearchBarComponent } from './admin-user-index-search-bar/
 import { AdminUserIndexTableComponent } from './admin-user-index-table/admin-user-index-table.component';
 import {
   MatButtonModule,
-  MatCheckboxModule,
+  MatCheckboxModule, MatDialogModule,
   MatFormFieldModule,
   MatInputModule,
   MatTableModule
@@ -14,6 +14,8 @@ import {
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {UsersService} from "../../../../services/users.service";
 import {HttpClientModule} from "@angular/common/http";
+import { AdminUserIndexAddComponent } from './admin-user-index-add/admin-user-index-add.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 const routes: Routes = [
   {
@@ -29,14 +31,17 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     HttpClientModule,
     FlexLayoutModule,
+    ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
     MatCheckboxModule,
     MatTableModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDialogModule
   ],
-  declarations: [AdminUserIndexComponent, AdminUserIndexSearchBarComponent, AdminUserIndexTableComponent],
+  declarations: [AdminUserIndexComponent, AdminUserIndexSearchBarComponent, AdminUserIndexTableComponent, AdminUserIndexAddComponent],
   bootstrap: [AdminUserIndexComponent],
-  providers: [UsersService]
+  providers: [UsersService],
+  entryComponents: [AdminUserIndexAddComponent]
 })
 export class AdminUserIndexModule { }
