@@ -7,7 +7,7 @@ import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core'
 })
 export class CorporateSidebarItemComponent implements OnChanges, OnInit {
 
-  @Input('item') item: string;
+  @Input('item') item;
 
   constructor() { }
 

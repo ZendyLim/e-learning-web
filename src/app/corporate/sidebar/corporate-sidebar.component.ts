@@ -7,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CorporateSidebarComponent implements OnInit {
 
-  items: string[] = [
-    'Home',
-    'User'
+  items: {name, link}[] = [
+    {name: 'Home', link: '/corporate'},
+    {name: 'User', link: '/corporate/user'},
+    {name: 'Logout', link: '/'},
   ];
 
   constructor() { }

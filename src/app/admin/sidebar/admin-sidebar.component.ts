@@ -7,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminSidebarComponent implements OnInit {
 
-  items: string[] = [
-    'Home',
-    'User'
+  items: {name, link}[] = [
+    {name: 'Home', link: '/admin'},
+    {name: 'User', link: '/admin/user'},
+    {name: 'Logout', link: '/'},
   ];
 
   constructor() { }
