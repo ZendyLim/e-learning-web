@@ -18,9 +18,11 @@
   <mat-form-field>
     <input matInput placeholder="Birthday" formControlName="birthday" />
   </mat-form-field>
-  <mat-form-field>
-    <input matInput placeholder="Gender" formControlName="gender" />
-  </mat-form-field>
+  <mat-radio-group formControlName="gender">
+    <mat-radio-button value="1">Male</mat-radio-button>
+    <br/>
+    <mat-radio-button value="2">Female</mat-radio-button>
+  </mat-radio-group>
   <mat-form-field>
     <input matInput placeholder="JLPT" formControlName="jlpt" />
   </mat-form-field>

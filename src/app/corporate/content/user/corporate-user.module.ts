@@ -9,7 +9,7 @@ import {
   MatCardModule,
   MatDialogModule,
   MatInputModule,
-  MatProgressSpinnerModule
+  MatProgressSpinnerModule, MatRadioModule
 } from "@angular/material";
 import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
@@ -33,7 +33,8 @@ const routes: Routes = [
     MatCardModule,
     MatDialogModule,
     MatInputModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatRadioModule
   ],
   providers: [CorporateUserService],
   declarations: [CorporateUserComponent, CorporateUserCardComponent, CorporateUserAddButtonComponent, CorporateUserAddModalComponent],
