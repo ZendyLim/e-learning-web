@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {AdminUserAddModalComponent} from "../../../admin/content/user/add-modal/admin-user-add-modal.component";
 import {MatDialog} from "@angular/material";
 import {CorporateUserService} from "./corporate-user.service";
+import {CorporateUserAddModalComponent} from "./add-modal/corporate-user-add-modal.component";
 
 @Component({
   selector: 'app-corporate-user',
@@ -33,7 +33,7 @@ export class CorporateUserComponent implements OnInit {
   }
 
   openAddDialog() {
-    let dialogRef = this.dialog.open(AdminUserAddModalComponent, {
+    let dialogRef = this.dialog.open(CorporateUserAddModalComponent, {
       width: '250px',
       data: {}
     });

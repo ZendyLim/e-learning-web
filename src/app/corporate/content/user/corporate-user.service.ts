@@ -19,7 +19,7 @@ export class CorporateUserService {
   }
 
   addUser(body: any): Observable<any> {
-    return this._http.post(`https://e-learning-backend.herokuapp.com/v1/createCorporateUser`,
+    return this._http.post(`https://e-learning-backend.herokuapp.com/v1/createUser`,
       body,
       {
         headers: {

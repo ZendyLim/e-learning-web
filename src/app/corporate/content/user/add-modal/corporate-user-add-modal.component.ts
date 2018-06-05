@@ -11,7 +11,14 @@ export class CorporateUserAddModalComponent implements OnInit {
 
 
   newUserForm : FormGroup = new FormGroup({
-    username: new FormControl('')
+    username: new FormControl(''),
+    company: new FormControl(''),
+    department: new FormControl(''),
+    joinDate: new FormControl(''),
+    name: new FormControl(''),
+    birthday: new FormControl(''),
+    gender: new FormControl(''),
+    jlpt: new FormControl('')
   });
 
   constructor(public dialogRef: MatDialogRef<CorporateUserAddModalComponent>) { }

@@ -8,7 +8,6 @@ import {CorporateSidebarItemComponent} from "./item/corporate-sidebar-item.compo
     CommonModule
   ],
   declarations: [CorporateSidebarComponent, CorporateSidebarItemComponent],
-  bootstrap: [CorporateSidebarComponent],
   exports: [CorporateSidebarComponent]
 })
 export class CorporateSidebarModule { }

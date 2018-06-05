@@ -3,6 +3,7 @@ import {FormControl, FormGroup} from "@angular/forms";
 import {AuthService} from "../services/auth.service";
 import {HttpErrorResponse, HttpResponse} from "@angular/common/http";
 import {Router} from "@angular/router";
+import * as jwt from 'jwt-decode';
 
 @Component({
   selector: 'app-login',
@@ -33,7 +34,11 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('token', response.headers.get('Authorization'));
           this.loginForm.enable();
           this.requesting = false;
-          this._router.navigateByUrl('/admin/user');
+          if (jwt(response.headers.get('Authorization')).data.role == 'GAB_ADMIN') {
+            this._router.navigateByUrl('/admin/user');
+          } else {
+            this._router.navigateByUrl('/corporate/user');
+          }
         },
         (error: HttpErrorResponse) => {
           console.log(error);
