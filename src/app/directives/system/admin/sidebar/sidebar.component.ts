@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {MenuItem} from "./menu-item";
 
 @Component({
-  selector: 'app-sidebar',
+  selector: 'app-admin-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss']
 })
