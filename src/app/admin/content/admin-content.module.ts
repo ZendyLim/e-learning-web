@@ -9,8 +9,16 @@ const routes: Routes = [
     component: AdminContentComponent,
     children: [
       {
+        path: '',
+        loadChildren: './home/admin-home.module#AdminHomeModule'
+      },
+      {
         path: 'user',
         loadChildren: './user/admin-user.module#AdminUserModule'
+      },
+      {
+        path: 'gab',
+        loadChildren: './gabuser/admingab.module#AdmingabModule'
       }
     ]
   }
