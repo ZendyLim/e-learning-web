@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AdmingabComponent } from './admingab.component';
+import { CorporateComponent } from './corporate.component';
 import {RouterModule, Routes} from "@angular/router";
 import { EditModuleComponent } from './edit-modal/edit-module.component';
 import {
@@ -15,7 +15,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 const routes: Routes = [
   {
     path: '',
-    component: AdmingabComponent,
+    component: CorporateComponent,
   }
 ];
 
@@ -30,8 +30,8 @@ const routes: Routes = [
     MatInputModule,
     MatProgressSpinnerModule
   ],
-  declarations: [AdmingabComponent, EditModuleComponent],
-  bootstrap: [AdmingabComponent],
+  declarations: [CorporateComponent, EditModuleComponent],
+  bootstrap: [CorporateComponent],
   entryComponents: [EditModuleComponent]
 })
-export class AdmingabModule { }
+export class CorporateModule { }

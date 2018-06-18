@@ -3,11 +3,11 @@ import {MatDialog} from "@angular/material";
 import { EditModuleComponent } from './edit-modal/edit-module.component';
 
 @Component({
-  selector: 'app-admingab',
-  templateUrl: './admingab.component.html',
-  styleUrls: ['./admingab.component.scss']
+  selector: 'app-corporate',
+  templateUrl: './corporate.component.html',
+  styleUrls: ['./corporate.component.scss']
 })
-export class AdmingabComponent implements OnInit {
+export class CorporateComponent implements OnInit {
 
   constructor(public dialog: MatDialog) { }
 
@@ -27,5 +27,6 @@ export class AdmingabComponent implements OnInit {
     console.log("Implement delete functionality here");
   }
 }
+
 
 }

@@ -9797,7 +9797,8 @@ hr {
   -webkit-appearance: none;
   outline: none !important;
   -webkit-transition: all 0.1s;
-  transition: all 0.1s; }
+  transition: all 0.1s; 
+  margin-right: 10px}
   .btn.btn-link {
     box-shadow: none;
     border: 0; }
