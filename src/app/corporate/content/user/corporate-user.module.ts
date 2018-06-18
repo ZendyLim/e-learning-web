@@ -7,14 +7,18 @@ import {CorporateUserCardComponent} from "./card/corporate-user-card.component";
 import {
   MatButtonModule,
   MatCardModule,
+  MatDatepickerModule,
   MatDialogModule,
   MatInputModule,
-  MatProgressSpinnerModule, MatRadioModule
+  MatNativeDateModule,
+  MatProgressSpinnerModule,
+  MatRadioModule
 } from "@angular/material";
 import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {RouterModule, Routes} from "@angular/router";
 import {CorporateUserService} from "./corporate-user.service";
+import {FlexLayoutModule} from "@angular/flex-layout";
 
 const routes: Routes = [
   {
@@ -29,12 +33,15 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     HttpClientModule,
     ReactiveFormsModule,
+    FlexLayoutModule,
     MatButtonModule,
     MatCardModule,
     MatDialogModule,
     MatInputModule,
     MatProgressSpinnerModule,
-    MatRadioModule
+    MatRadioModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [CorporateUserService],
   declarations: [CorporateUserComponent, CorporateUserCardComponent, CorporateUserAddButtonComponent, CorporateUserAddModalComponent],

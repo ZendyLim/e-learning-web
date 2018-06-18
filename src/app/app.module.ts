@@ -5,6 +5,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {FlexLayoutModule} from "@angular/flex-layout";
 
 import {AppComponent} from './app.component';
+import {OverlayModule} from "@angular/cdk/overlay";
 
 const appRoutes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -23,6 +24,7 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     FlexLayoutModule,
     RouterModule.forRoot(appRoutes),
+    OverlayModule
   ],
   providers: [],
   bootstrap: [AppComponent]
