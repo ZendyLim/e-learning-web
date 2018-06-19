@@ -6,6 +6,8 @@ import {FlexLayoutModule} from "@angular/flex-layout";
 
 import {AppComponent} from './app.component';
 import {OverlayModule} from "@angular/cdk/overlay";
+import {AlertModule} from "./alert/alert.module";
+import {AlertService} from "./alert/alert.service";
 
 const appRoutes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -24,9 +26,10 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     FlexLayoutModule,
     RouterModule.forRoot(appRoutes),
-    OverlayModule
+    OverlayModule,
+    AlertModule
   ],
-  providers: [],
+  providers: [AlertService],
   bootstrap: [AppComponent]
 })
 
