@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CorporateComponent } from './corporate.component';
+import { CorpuserComponent } from './Corpuser.component';
 import {RouterModule, Routes} from "@angular/router";
 import { EditModuleComponent } from './edit-modal/edit-module.component';
 import {
@@ -15,7 +15,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 const routes: Routes = [
   {
     path: '',
-    component: CorporateComponent,
+    component: CorpuserComponent,
   }
 ];
 
@@ -30,8 +30,8 @@ const routes: Routes = [
     MatInputModule,
     MatProgressSpinnerModule
   ],
-  declarations: [CorporateComponent, EditModuleComponent],
-  bootstrap: [CorporateComponent],
+  declarations: [CorpuserComponent, EditModuleComponent],
+  bootstrap: [CorpuserComponent],
   entryComponents: [EditModuleComponent]
 })
-export class CorporateModule { }
+export class CorpuserModule { }

@@ -10,7 +10,7 @@ const routes: Routes = [
     children: [
       {
         path: 'corporate',
-        loadChildren: './corporate/corporate.module#CorporateContentModule'
+        loadChildren: './corpuser/corpuser.module#CorpuserModule'
       }
     ]
   }
