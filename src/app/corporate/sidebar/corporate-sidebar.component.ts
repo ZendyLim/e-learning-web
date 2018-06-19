@@ -10,6 +10,7 @@ export class CorporateSidebarComponent implements OnInit {
   items: {name, link}[] = [
     {name: 'Home', link: '/corporate'},
     {name: 'User', link: '/corporate/user'},
+    {name: 'Corporate', link: '/corporate/corporate'},
     {name: 'Logout', link: '/'},
   ];
 

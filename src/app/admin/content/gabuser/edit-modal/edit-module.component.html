@@ -1,0 +1,56 @@
+<form class="panel panel-defaultform-horizontal animated fadeInRight" [formGroup]="newUserForm" (submit)="submit()">
+  <div class="panel-heading bg-primary"><span>Edit User</span></div>
+
+  	<div>
+      <div class="panel-body">
+        <fieldset>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">First Name *</label>
+            <div class="col-sm-10">
+              <input type="text" name="name" required class="form-control">
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Last Name *</label>
+            <div class="col-sm-10">
+              <input type="text" name="author" required class="form-control">
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Email *</label>
+            <div class="col-sm-10">
+              <input type="text" name="album" required class="form-control">
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Create At *</label>
+            <div class="col-sm-10">
+              <input type="text" name="album" required class="form-control">
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Note *</label>
+            <div class="col-sm-10">
+              <textarea class="form-control" name="note"></textarea>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <div class="panel-footer">
+        <button type="submit" class="btn btn-primary" [class.btn-warning]="editing">Save</button>
+        <button type="reset" class="btn btn-danger" routerLink="/admin/gab">Cancel</button>
+      </div>
+    </div>
+</form>

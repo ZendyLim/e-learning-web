@@ -9,8 +9,8 @@ const routes: Routes = [
     component: CorporateContentComponent,
     children: [
       {
-        path: 'user',
-        loadChildren: './user/corporate-user.module#CorporateUserModule'
+        path: 'corporate',
+        loadChildren: './corporate/corporate.module#CorporateContentModule'
       }
     ]
   }
