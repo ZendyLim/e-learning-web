@@ -10,7 +10,8 @@ import {MatDialogRef} from "@angular/material";
 export class AdminUserAddModalComponent implements OnInit {
 
   newUserForm : FormGroup = new FormGroup({
-    username: new FormControl('')
+    username: new FormControl(''),
+    name: new FormControl(''),
   });
 
   constructor(public dialogRef: MatDialogRef<AdminUserAddModalComponent>) { }
@@ -19,7 +20,16 @@ export class AdminUserAddModalComponent implements OnInit {
   }
 
   submit(){
-    this.dialogRef.close(this.newUserForm.value);
+    if(this.newUserForm.value['username'] == ''){
+      alert('Please fill email');
+    }else{
+      if(this.newUserForm.value['name'] == ''){
+        alert('please fill name')
+      }else{
+        this.dialogRef.close(this.newUserForm.value);
+      }
+    }
+    //
   }
 
 }

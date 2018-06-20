@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AdminUserService} from "./admin-user.service";
 import {MatDialog} from "@angular/material";
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import {AdminUserAddModalComponent} from "./add-modal/admin-user-add-modal.component";
 import {AdminUserEditModalComponent} from "./edit-modal/admin-user-edit-modal.component";
 import {AdminUserDeleteModalComponent} from "./delete-modal/admin-user-delete-modal.component";
@@ -11,15 +12,24 @@ import {AdminUserDeleteModalComponent} from "./delete-modal/admin-user-delete-mo
   styleUrls: ['./admin-user.component.scss']
 })
 export class AdminUserComponent implements OnInit {
-
+  formSearch: FormGroup;
+  searchKeyword = "";
   users = [];
   loading = false;
 
-  constructor(private _userService: AdminUserService, public dialog: MatDialog) {
+  constructor(private _userService: AdminUserService, public dialog: MatDialog,  private formBuilder : FormBuilder) {
   }
 
   ngOnInit() {
-    this.getUsers()
+    this.getUsers();
+    this.createForm();
+  }
+  //create form 
+  createForm() {
+    this.formSearch = this.formBuilder.group({
+      search: ['', Validators.required], // name field
+    });
+  
   }
 
   getUsers() {
@@ -28,7 +38,6 @@ export class AdminUserComponent implements OnInit {
       .subscribe((result) => {
         this.users = result.body.users;
         this.loading = false;
-        console.log(this.users);
 
       }, (err) => {
         console.error(err);
@@ -49,7 +58,7 @@ export class AdminUserComponent implements OnInit {
   }
   openEditDialog(index) {
     let dialogRef = this.dialog.open(AdminUserEditModalComponent, {
-      width: '720px',
+      width: '250px',
       data: {
         index
       }
@@ -64,8 +73,9 @@ export class AdminUserComponent implements OnInit {
   }
 
   clickMethod(name: string) {
-  if(confirm("Are you sure to delete "+name)) {
-    console.log("Implement delete functionality here");
+    if(confirm("Are you sure to delete "+name)) {
+      console.log("Implement delete functionality here");
+    }
   }
 
   openDeleteDialog(index) {
@@ -74,12 +84,9 @@ export class AdminUserComponent implements OnInit {
       data: {
         index
       }
-      
     });
-
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        console.log(result);
         //this.addNewUser(result);
       }
     });
@@ -88,11 +95,23 @@ export class AdminUserComponent implements OnInit {
   addNewUser(body: any){
     this._userService.addUser(body)
       .subscribe((result) => {
-        console.log(result);
         alert('User Created!');
         this.getUsers();
       }, (err) => {
         console.error(err);
       })
+  }
+
+  getBySearch(value){
+    this.loading = true;
+    this._userService.getUserBySearch(value)
+      .subscribe((result) => {
+        this.users = result.body.users;
+        this.loading = false;
+
+      }, (err) => {
+        console.error(err);
+      })
+    
   }
 }
