@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {AdminUserService} from "./admin-user.service";
 import {MatDialog} from "@angular/material";
 import {AdminUserAddModalComponent} from "./add-modal/admin-user-add-modal.component";
+import {AdminUserEditModalComponent} from "./edit-modal/admin-user-edit-modal.component";
+import {AdminUserDeleteModalComponent} from "./delete-modal/admin-user-delete-modal.component";
 
 @Component({
   selector: 'app-admin-user',
@@ -24,9 +26,10 @@ export class AdminUserComponent implements OnInit {
     this.loading = true;
     this._userService.getUsers()
       .subscribe((result) => {
-        console.log(result);
         this.users = result.body.users;
         this.loading = false;
+        console.log(this.users);
+
       }, (err) => {
         console.error(err);
       })
@@ -41,6 +44,38 @@ export class AdminUserComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         this.addNewUser(result);
+      }
+    });
+  }
+  openEditDialog(index) {
+    let dialogRef = this.dialog.open(AdminUserEditModalComponent, {
+      width: '250px',
+      data: {
+        index
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        console.log(result);
+        //this.addNewUser(result);
+      }
+    });
+  }
+
+  openDeleteDialog(index) {
+    let dialogRef = this.dialog.open(AdminUserDeleteModalComponent, {
+      width: '250px',
+      data: {
+        index
+      }
+      
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        console.log(result);
+        //this.addNewUser(result);
       }
     });
   }

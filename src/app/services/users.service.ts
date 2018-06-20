@@ -7,9 +7,9 @@ export class UsersService {
 
   constructor(private http: HttpClient) {
   }
-
+  //********************************* API ************************************************/
   getCorporateUsers(): Observable<any> {
-    return this.http.get(`http://localhost:3000/v1/getCorporateUsers`, {
+    return this.http.get(`https://e-learning-backend.herokuapp.com/v1/getCorporateUsers`, {
       headers: {
         'Authorization': localStorage.getItem('token')
       },
@@ -18,7 +18,7 @@ export class UsersService {
   }
 
   createCorporateUsers(username: string): Observable<any> {
-    return this.http.post(`http://localhost:3000/v1/createCorporateUser`, {
+    return this.http.post(`https://e-learning-backend.herokuapp.com/v1/createCorporateUser`, {
       username: username
     },{
       headers: {

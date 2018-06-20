@@ -9,7 +9,7 @@ export class AdminSidebarComponent implements OnInit {
 
   items: {name, link}[] = [
     {name: 'Home', link: '/admin'},
-    {name: 'User', link: '/admin/user'},
+    {name: 'Corporate', link: '/admin/corporate'},
     {name: 'Analytic', link: '/admin/analytic'},
     {name: 'Student', link: '/admin/student'},
     {name: 'Logout', link: '/'},
