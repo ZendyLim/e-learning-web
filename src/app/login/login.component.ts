@@ -4,6 +4,7 @@ import {AuthService} from "../services/auth.service";
 import {HttpErrorResponse, HttpResponse} from "@angular/common/http";
 import {Router} from "@angular/router";
 import * as jwt from 'jwt-decode';
+import {AlertService} from "../alert/alert.service";
 
 @Component({
   selector: 'app-login',
@@ -19,7 +20,7 @@ export class LoginComponent implements OnInit {
 
   requesting: boolean = false;
 
-  constructor(private _authService: AuthService, private _router: Router) {
+  constructor(private _alertService: AlertService, private _authService: AuthService, private _router: Router) {
   }
 
   ngOnInit() {
@@ -34,14 +35,32 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('token', response.headers.get('Authorization'));
           this.loginForm.enable();
           this.requesting = false;
-          if (jwt(response.headers.get('Authorization')).data.role == 'GAB_ADMIN') {
+          if (jwt(response.headers.get('Authorization')).data.role == 'ADMIN') {
             this._router.navigateByUrl('/admin/user');
           } else {
             this._router.navigateByUrl('/corporate/user');
           }
         },
         (error: HttpErrorResponse) => {
+
+          let msg = "";
+
+          switch (error.status) {
+            case 422:
+              error.error.errors.forEach((err) => {
+                msg += err.msg + ' ';
+              });
+              this._alertService.pushAlert('error', msg);
+              break;
+            case 401:
+              this._alertService.pushAlert('error', 'Email/Password not match');
+              break;
+            default:
+              this._alertService.pushAlert('error', 'Unknown error occurred!');
+              break;
+          }
           console.log(error);
+
           this.loginForm.enable();
           this.requesting = false;
         }
