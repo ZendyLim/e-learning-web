@@ -8,6 +8,7 @@ export class AdminUserService {
   constructor(private _http: HttpClient) {
   }
 
+  //********************************* API ************************************************/
   getUsers(): Observable<any> {
     return this._http.get(`https://e-learning-backend.herokuapp.com/v1/getCorporateUsers`,
       {

@@ -6,6 +6,9 @@ import {AdminUserService} from "./admin-user.service";
 import {HttpClientModule} from "@angular/common/http";
 import { AdminUserAddButtonComponent } from './add-button/admin-user-add-button.component';
 import { AdminUserAddModalComponent } from './add-modal/admin-user-add-modal.component';
+import { AdminUserEditModalComponent } from './edit-modal/admin-user-edit-modal.component';
+import { AdminUserDeleteModalComponent } from './delete-modal/admin-user-delete-modal.component';
+
 import {
   MatButtonModule,
   MatCardModule,
@@ -36,8 +39,8 @@ const routes: Routes = [
     MatProgressSpinnerModule
   ],
   providers: [AdminUserService],
-  declarations: [AdminUserComponent, AdminUserAddButtonComponent, AdminUserAddModalComponent, AdminUserTableRowComponent],
+  declarations: [AdminUserComponent, AdminUserAddButtonComponent, AdminUserAddModalComponent, AdminUserTableRowComponent, AdminUserEditModalComponent , AdminUserDeleteModalComponent],
   bootstrap: [AdminUserComponent],
-  entryComponents: [AdminUserAddModalComponent]
+  entryComponents: [AdminUserAddModalComponent , AdminUserEditModalComponent , AdminUserDeleteModalComponent]
 })
 export class AdminUserModule { }

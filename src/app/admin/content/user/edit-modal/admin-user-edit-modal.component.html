@@ -1,0 +1,7 @@
+<h3>Add Corporate Edit</h3>
+<form [formGroup]="newUserForm" (submit)="submit()">
+  <mat-form-field>
+    <input matInput placeholder="Username" formControlName="username" />
+  </mat-form-field>
+  <button mat-button color="primary">Submit</button>
+</form>
