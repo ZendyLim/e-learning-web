@@ -17,8 +17,12 @@ const routes: Routes = [
         loadChildren: './user/admin-user.module#AdminUserModule'
       },
       {
-        path: 'gab',
-        loadChildren: './gabuser/admingab.module#AdmingabModule'
+        path: 'analytic',
+        loadChildren: './analytic/admin-analytic.module#AdminAnalyticModule'
+      },
+      {
+        path: 'student',
+        loadChildren: './student/admin-student.module#AdminStudentModule'
       }
     ]
   }

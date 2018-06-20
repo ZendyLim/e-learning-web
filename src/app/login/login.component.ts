@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('token', response.headers.get('Authorization'));
           this.loginForm.enable();
           this.requesting = false;
-          if (jwt(response.headers.get('Authorization')).data.role == 'ADMIN') {
+          if (jwt(response.headers.get('Authorization')).data.role == 'GAB_ADMIN') {
             this._router.navigateByUrl('/admin/user');
           } else {
             this._router.navigateByUrl('/corporate/user');
@@ -59,8 +59,6 @@ export class LoginComponent implements OnInit {
               this._alertService.pushAlert('error', 'Unknown error occurred!');
               break;
           }
-          console.log(error);
-
           this.loginForm.enable();
           this.requesting = false;
         }
