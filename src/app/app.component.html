@@ -1,3 +1,10 @@
 <div id="app-container">
+  <div id="alert-container" fxLayout>
+    <div fxFlex="10"></div>
+    <div fxFlex="80" fxLayout="column">
+      <app-alert *ngFor="let alert of alerts let i = index" [alert]="alert" (dismiss)="dismiss(i)"></app-alert>
+    </div>
+    <div fxFlex="10"></div>
+  </div>
   <router-outlet></router-outlet>
 </div>
