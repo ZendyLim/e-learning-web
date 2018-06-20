@@ -9,7 +9,7 @@ export class AuthService {
   }
 
   login(username: string, password: string): Observable<any> {
-    return this.http.post(`https://e-learning-backend.herokuapp.com/v1/login`,
+    return this.http.post(`http://localhost:3000/v1/login`,
       {username: username, password: password},
       {
         headers: {
