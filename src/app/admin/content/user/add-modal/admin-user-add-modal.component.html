@@ -1,7 +1,19 @@
-<h3>Add Corporate User</h3>
 <form [formGroup]="newUserForm" (submit)="submit()">
-  <mat-form-field>
-    <input matInput placeholder="Username" formControlName="username" />
-  </mat-form-field>
-  <button mat-button color="primary">Submit</button>
+     <div class="form-heading">
+     <h1>Create Corporate</h1>
+   </div>
+   <div class="form-body">
+     <div class="form-group has-feedback">
+       <input name="email" required type="email" placeholder="Enter First Name" class="form-control" formControlName="firstname">
+     </div>
+     <div class="form-group has-feedback">
+       <input name="email" required type="email" placeholder="Enter Last Name" class="form-control" formControlName="lastname">
+     </div>
+     <div class="form-group has-feedback">
+       <input name="email" required type="email" placeholder="Enter Email" class="form-control" formControlName="email">
+     </div>
+     <button type="submit" class="btn btn-block btn-primary mt-lg">
+       Create
+     </button>
+   </div>
 </form>
