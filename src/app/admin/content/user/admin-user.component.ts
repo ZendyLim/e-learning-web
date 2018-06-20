@@ -49,7 +49,7 @@ export class AdminUserComponent implements OnInit {
   }
   openEditDialog(index) {
     let dialogRef = this.dialog.open(AdminUserEditModalComponent, {
-      width: '250px',
+      width: '720px',
       data: {
         index
       }
@@ -61,6 +61,11 @@ export class AdminUserComponent implements OnInit {
         //this.addNewUser(result);
       }
     });
+  }
+
+  clickMethod(name: string) {
+  if(confirm("Are you sure to delete "+name)) {
+    console.log("Implement delete functionality here");
   }
 
   openDeleteDialog(index) {
