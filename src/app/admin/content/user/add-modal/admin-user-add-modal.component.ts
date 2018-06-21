@@ -12,6 +12,7 @@ export class AdminUserAddModalComponent implements OnInit {
   newUserForm : FormGroup = new FormGroup({
     username: new FormControl(''),
     name: new FormControl(''),
+    password: new FormControl(''),
   });
 
   constructor(public dialogRef: MatDialogRef<AdminUserAddModalComponent>) { }
@@ -26,7 +27,12 @@ export class AdminUserAddModalComponent implements OnInit {
       if(this.newUserForm.value['name'] == ''){
         alert('please fill name')
       }else{
-        this.dialogRef.close(this.newUserForm.value);
+        if(this.newUserForm.value['password'] == ''){
+          alert('please fill Password')
+        }else{
+
+          this.dialogRef.close(this.newUserForm.value);
+        }
       }
     }
     //
