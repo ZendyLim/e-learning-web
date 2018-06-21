@@ -142,3 +142,11 @@ th, td {
     text-align: left;
     padding: 8px;
 }
+
+.table-responsive {
+  overflow-x : scroll;
+
+  th,td{
+    min-width:100px
+  }
+}
