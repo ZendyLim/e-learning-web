@@ -19,7 +19,7 @@ export class AdminUserComponent implements OnInit {
 
   constructor(private _userService: AdminUserService, public dialog: MatDialog,  private formBuilder : FormBuilder) {
   }
-
+  
   ngOnInit() {
     this.getUsers();
     this.createForm();
@@ -29,7 +29,15 @@ export class AdminUserComponent implements OnInit {
     this.formSearch = this.formBuilder.group({
       search: ['', Validators.required], // name field
     });
-  
+  }
+
+  printStatus(id){
+    var count = this._userService.statusArr.length;
+    for(var i = 0; i<count; i++){
+      if(this._userService.statusArr[i]['id'] == id){
+        return this._userService.statusArr[i]['title'];
+      }
+    }
   }
 
   getUsers() {
@@ -46,7 +54,7 @@ export class AdminUserComponent implements OnInit {
 
   openAddDialog() {
     let dialogRef = this.dialog.open(AdminUserAddModalComponent, {
-      width: '250px',
+      width: '400px',
       data: {}
     });
 
@@ -58,7 +66,7 @@ export class AdminUserComponent implements OnInit {
   }
   openEditDialog(index) {
     let dialogRef = this.dialog.open(AdminUserEditModalComponent, {
-      width: '250px',
+      width: '400px',
       data: {
         index
       }
@@ -66,8 +74,11 @@ export class AdminUserComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        console.log(result);
-        //this.addNewUser(result);
+        var value_parse = {
+          user : result
+          
+        }
+        this.updateNewUser(value_parse);
       }
     });
   }
@@ -80,7 +91,7 @@ export class AdminUserComponent implements OnInit {
 
   openDeleteDialog(index) {
     let dialogRef = this.dialog.open(AdminUserDeleteModalComponent, {
-      width: '250px',
+      width: '400px',
       data: {
         index
       }
@@ -93,6 +104,7 @@ export class AdminUserComponent implements OnInit {
   }
 
   addNewUser(body: any){
+    console.log(body);
     this._userService.addUser(body)
       .subscribe((result) => {
         alert('User Created!');
@@ -102,6 +114,16 @@ export class AdminUserComponent implements OnInit {
       })
   }
 
+  updateNewUser(body: any){
+    console.log(body);
+    this._userService.updateUser(body)
+      .subscribe((result) => {
+        alert('User Updated!');
+        this.getUsers();
+      }, (err) => {
+        console.error(err);
+      })
+  }
   getBySearch(value){
     this.loading = true;
     this._userService.getUserBySearch(value)

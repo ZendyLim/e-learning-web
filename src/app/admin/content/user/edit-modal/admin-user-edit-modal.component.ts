@@ -12,16 +12,18 @@ export class AdminUserEditModalComponent implements OnInit {
   newEditForm : FormGroup = new FormGroup({
     username: new FormControl(''),
     name: new FormControl(''),
+    status: new FormControl(1),
   });
 
   constructor(public dialogRef: MatDialogRef<AdminUserEditModalComponent>, @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit() {
+    console.log(this.data.index);
    this.user = this.data.index;
   }
 
   submit(){
-    this.newEditForm.value['id'] = this.user['_id'];
+    this.newEditForm.value['_id'] = this.user['_id'];
     if(this.newEditForm.value['username'] == ''){
       alert('Please fill email');
     }else{

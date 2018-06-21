@@ -19,6 +19,7 @@
             <tr>
               <th>Name</th>
               <th>Email</th>
+              <th>status</th>
               <th>Operation</th>
             </tr>
             </thead>
@@ -26,6 +27,7 @@
             <tr *ngFor="let user of users; let i of index ">
               <td>{{ user.name }}</td>
               <td>{{ user.username }}</td>
+              <td><span *ngIf="user.status">{{ printStatus(user.status) }}</span></td>
               <td>
                 <span class="op-col text-center">
                   <a class="text-warning" title="Edit"><i class="fas fa-edit" (click)="openEditDialog(i)"></i></a>

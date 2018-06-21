@@ -7,7 +7,13 @@ export class AdminUserService {
 
   constructor(private _http: HttpClient) {
   }
-
+  statusArr = [{
+    id: "1",
+    title: "Active"
+  },{
+    id: "0",
+    title: "Non Active"
+  }];
   //********************************* API ************************************************/
   getUsers(): Observable<any> {
     return this._http.get(`https://e-learning-backend.herokuapp.com/v1/getCorporateUsers`,
@@ -32,8 +38,8 @@ export class AdminUserService {
   }
 
 
-  updateUser(body: any, id:number): Observable<any> {
-    return this._http.put(`https://e-learning-backend.herokuapp.com/v1/createCorporateUser`,
+  updateUser(body: any): Observable<any> {
+    return this._http.post(`https://e-learning-backend.herokuapp.com/v1/updateCorporateUser`,
       body,
       {
         headers: {
