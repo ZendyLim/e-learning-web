@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AdminHomeComponent } from './admin-home.component';
+import { CorporateAnalyticComponent } from './corporate-analytic.component';
 import {RouterModule, Routes} from "@angular/router";
 
 const routes: Routes = [
   {
     path: '',
-    component: AdminHomeComponent
+    component: CorporateAnalyticComponent
   }
 ];
 
@@ -15,7 +15,7 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [AdminHomeComponent],
-  bootstrap: [AdminHomeComponent]
+  declarations: [CorporateAnalyticComponent],
+  bootstrap: [CorporateAnalyticComponent]
 })
-export class AdminHomeModule { }
+export class CorporateAnalyticModule { }
