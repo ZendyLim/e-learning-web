@@ -1,7 +1,9 @@
 <div class="row op animated fadeInRight">
     <div class="col-sm-10">
       <span>Search:&nbsp;&nbsp;</span>
-      <input type="text" class="form-control search">
+      <form [formGroup]="formSearch" style="width:100%;" >
+        <input type="text" class="form-control search" formControlName="search" [(ngModel)]="searchKeyword" (ngModelChange)="getBySearch(searchKeyword)"> 
+      </form>
     </div>
     <div class="col-sm-2">
       <button type="button" class="btn btn-success" (click)="openAddDialog()">
@@ -15,21 +17,20 @@
           <table class="table table-bordered table-hover">
             <thead>
             <tr>
-              <th>First Name</th>
-              <th>Last Name</th>
+              <th>Name</th>
               <th>Email</th>
+              <th>status</th>
               <th>Operation</th>
             </tr>
             </thead>
             <tbody>
             <tr *ngFor="let user of users; let i of index ">
+              <td>{{ user.name }}</td>
               <td>{{ user.username }}</td>
-              <td>{{ user.username }}</td>
-              <td>{{ user.username }}</td>
+              <td><span *ngIf="user.status">{{ printStatus(user.status) }}</span></td>
               <td>
-                <span class="op-col">
+                <span class="op-col text-center">
                   <a class="text-warning" title="Edit"><i class="fas fa-edit" (click)="openEditDialog(i)"></i></a>
-                  <a class="text-danger"  title="Delete" (click)="openDeleteDialog(i)"><i class="fas fa-trash"></i></a>
                 </span>
               </td>
             </tr>

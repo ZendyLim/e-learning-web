@@ -8,10 +8,21 @@ const routes: Routes = [
     path: '',
     component: CorporateContentComponent,
     children: [
+      { path: '', redirectTo: 'home'},
       {
-        path: 'corporate',
-        loadChildren: './corporate/corporate.module#CorporateContentModule'
-      }
+        path: 'user',
+        loadChildren: './user/corporate-user.module#CorporateUserModule'
+      },
+      {
+        path: 'home',
+        loadChildren: './home/corporate-home.module#CorporateHomeModule'
+      },
+      {
+        path: 'analytic',
+        loadChildren: './analytic/corporate-analytic.module#CorporateAnalyticModule'
+      },
+
+      { path: '**', redirectTo: 'home'},
     ]
   }
 ];

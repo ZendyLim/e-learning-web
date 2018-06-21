@@ -1,7 +1,22 @@
-<h3>Add Corporate Edit</h3>
-<form [formGroup]="newUserForm" (submit)="submit()">
-  <mat-form-field>
-    <input matInput placeholder="Username" formControlName="username" />
-  </mat-form-field>
-  <button mat-button color="primary">Submit</button>
-</form>
+    <form [formGroup]="newEditForm" (submit)="submit()">
+        <div class="form-heading">
+        <h1>Edit Corporate</h1>
+      </div>
+      <div class="form-body">
+        <div class="form-group has-feedback">
+          <input name="name" required type="text" placeholder="Enter Name" [ngModel]="user.name" class="form-control" formControlName="name">
+        </div>
+        <div class="form-group has-feedback">
+          <input name="status" required type="email" placeholder="Enter Email" [ngModel]="user.username" class="form-control" formControlName="username">
+        </div>
+        <div class="form-group has-feedback">
+          <select name="status" required type="status" placeholder="Enter Status" [ngModel]="user.status" class="form-control" formControlName="status">
+            <option value="1">Active</option>
+            <option value="0">Non Active</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-block btn-primary mt-lg">
+          Create
+        </button>
+      </div>
+   </form>

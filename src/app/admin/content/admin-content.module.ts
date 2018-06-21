@@ -8,8 +8,9 @@ const routes: Routes = [
     path: '',
     component: AdminContentComponent,
     children: [
+      { path: '', redirectTo: 'home'},
       {
-        path: '',
+        path: 'home',
         loadChildren: './home/admin-home.module#AdminHomeModule'
       },
       {
@@ -23,7 +24,8 @@ const routes: Routes = [
       {
         path: 'student',
         loadChildren: './student/admin-student.module#AdminStudentModule'
-      }
+      },
+      { path: '**', redirectTo: 'home'},
     ]
   }
 ];
