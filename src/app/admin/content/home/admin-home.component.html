@@ -5,36 +5,22 @@
   <div class="table-responsive">
     <table class="table table-bordered table-hover">
       <thead>
-      <tr>
-        <th>No</th>
-        <th>UserName</th>
-        <th>Email</th>
-        <th>CreatedAt</th>
-        <th>Note</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-        <td>1</td>
-        <td>Naruto</td>
-        <td>naruto_uzumaki@konoha.com</td>
-        <td>2018-06-06</td>
-        <td>I like ramen</td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>Sakura</td>
-        <td>sakura_haruno@konoha.com</td>
-        <td>2018-06-06</td>
-        <td>I like flowers</td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td>Sasuke</td>
-        <td>sasuke_uchiha@konoha.com</td>
-        <td>2018-06-06</td>
-        <td>I like tomato</td>
-      </tr>
+        <tr>
+            <th>No</th>
+            <th>Age</th>
+            <th>Total</th>
+            <th>Male</th>
+            <th>Female</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let student of students; let i = index">
+            <td>{{ i+1 }}</td>
+            <td>{{ student.age }}</td>
+            <td>{{ student.total }}</td>
+            <td>{{ student.male }}</td>
+            <td>{{ student.female }}</td>
+          </tr>
       </tbody>
     </table>
   </div>
@@ -48,36 +34,20 @@
   <div class="table-responsive">
     <table class="table table-bordered table-hover">
       <thead>
-      <tr>
-        <th>No</th>
-        <th>UserName</th>
-        <th>Email</th>
-        <th>CreatedAt</th>
-        <th>Note</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-        <td>1</td>
-        <td>Rock Lee</td>
-        <td>rocklee@konoha.com</td>
-        <td>2018-06-06</td>
-        <td>I like ramen</td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>Tenten</td>
-        <td>tenten@konoha.com</td>
-        <td>2018-06-06</td>
-        <td>I like flowers</td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td>Kiba</td>
-        <td>kiba@konoha.com</td>
-        <td>2018-06-06</td>
-        <td>I like tomato</td>
-      </tr>
+        <tr>
+          <th>No</th>
+          <th>Name</th>
+          <th>Username</th>
+          <th>Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let corporate_user of corporate_users; let i = index">
+          <td>{{ i+1 }}</td>
+          <td>{{ corporate_user.name }}</td>
+          <td>{{ corporate_user.username }}</td>
+          <td>{{ corporate_user.status }}</td>
+        </tr>
       </tbody>
     </table>
   </div>
