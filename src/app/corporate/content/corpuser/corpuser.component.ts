@@ -3,11 +3,11 @@ import {MatDialog} from "@angular/material";
 import { EditModuleComponent } from './edit-modal/edit-module.component';
 
 @Component({
-  selector: 'app-corporate',
-  templateUrl: './corporate.component.html',
-  styleUrls: ['./corporate.component.scss']
+  selector: 'app-corpuser',
+  templateUrl: './corpuser.component.html',
+  styleUrls: ['./corpuser.component.scss']
 })
-export class CorporateComponent implements OnInit {
+export class CorpuserComponent implements OnInit {
 
   constructor(public dialog: MatDialog) { }
 
@@ -15,7 +15,6 @@ export class CorporateComponent implements OnInit {
   }
 
   openModalEdit() {
-  console.log("asdas");
   	let dialogRef = this.dialog.open(EditModuleComponent, {
       width: '80%',
       data: {}
