@@ -67,6 +67,7 @@ export class AdminUserComponent implements OnInit {
   if(confirm("Are you sure to delete "+name)) {
     console.log("Implement delete functionality here");
   }
+  }
 
   openDeleteDialog(index) {
     let dialogRef = this.dialog.open(AdminUserDeleteModalComponent, {
