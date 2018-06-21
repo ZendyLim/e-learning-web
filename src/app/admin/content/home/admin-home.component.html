@@ -8,29 +8,22 @@
   <div class="table-responsive">
     <table class="table table-bordered table-hover">
       <thead>
-      <tr>
-        <th>Age</th>
-        <th>Total</th>
-        <th>Average</th>
-        <th>Male</th>
-        <th>Female</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-        <td>18-20</td>
-        <td>12</td>
-        <td>16</td>
-        <td>7</td>
-        <td>4</td>
-      </tr>
-      <tr>
-        <td>21-25</td>
-        <td>14</td>
-        <td>23</td>
-        <td>12</td>
-        <td>2</td>
-      </tr>
+        <tr>
+            <th>No</th>
+            <th>Age</th>
+            <th>Total</th>
+            <th>Male</th>
+            <th>Female</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let student of students; let i = index">
+            <td>{{ i+1 }}</td>
+            <td>{{ student.age }}</td>
+            <td>{{ student.total }}</td>
+            <td>{{ student.male }}</td>
+            <td>{{ student.female }}</td>
+          </tr>
       </tbody>
     </table>
   </div>
@@ -47,24 +40,20 @@
   <div class="table-responsive">
     <table class="table table-bordered table-hover">
       <thead>
-      <tr>
-        <th>Name</th>
-        <th>Email</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-        <td>Rock Lee</td>
-        <td>rocklee@konoha.com</td>
-      </tr>
-      <tr>
-        <td>Tenten</td>
-        <td>tenten@konoha.com</td>
-      </tr>
-      <tr>
-        <td>Kiba</td>
-        <td>kiba@konoha.com</td>
-      </tr>
+        <tr>
+          <th>No</th>
+          <th>Name</th>
+          <th>Username</th>
+          <th>Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let corporate_user of corporate_users; let i = index">
+          <td>{{ i+1 }}</td>
+          <td>{{ corporate_user.name }}</td>
+          <td>{{ corporate_user.username }}</td>
+          <td>{{ corporate_user.status }}</td>
+        </tr>
       </tbody>
     </table>
   </div>
