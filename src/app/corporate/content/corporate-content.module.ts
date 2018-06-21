@@ -17,6 +17,11 @@ const routes: Routes = [
         path: 'home',
         loadChildren: './home/corporate-home.module#CorporateHomeModule'
       },
+      {
+        path: 'analytic',
+        loadChildren: './analytic/corporate-analytic.module#CorporateAnalyticModule'
+      },
+
       { path: '**', redirectTo: 'home'},
     ]
   }
