@@ -88,7 +88,7 @@ export class AdminUserComponent implements OnInit {
       console.log("Implement delete functionality here");
     }
   }
-  }
+  
 
   openDeleteDialog(index) {
     let dialogRef = this.dialog.open(AdminUserDeleteModalComponent, {
