@@ -1,0 +1,11 @@
+#app-container {
+  height: 100%;
+}
+
+#alert-container {
+  position: absolute;
+  top: 30px;
+  width: 100%;
+  z-index: 1000;
+}
+

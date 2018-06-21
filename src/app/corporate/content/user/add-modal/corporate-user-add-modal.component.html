@@ -1,0 +1,36 @@
+<h3>Add User</h3>
+<form [formGroup]="newUserForm" (submit)="submit()">
+  <mat-form-field>
+    <input matInput placeholder="Email" formControlName="username" />
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Name" formControlName="name" />
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput formControlName="birthday" [matDatepicker]="birthdayPicker" placeholder="Birthday">
+    <mat-datepicker-toggle matSuffix [for]="birthdayPicker"></mat-datepicker-toggle>
+    <mat-datepicker #birthdayPicker></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Company Name" formControlName="company" />
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Department" formControlName="department" />
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput formControlName="joinDate" [matDatepicker]="joinDatePicker" placeholder="Join Date">
+    <mat-datepicker-toggle matSuffix [for]="joinDatePicker"></mat-datepicker-toggle>
+    <mat-datepicker #joinDatePicker></mat-datepicker>
+  </mat-form-field>
+  <mat-radio-group formControlName="gender" fxLayout="column">
+    <p>Gender</p>
+    <mat-radio-button fxFlex class="radio" value="1">Male</mat-radio-button>
+    <mat-radio-button fxFlex class="radio" value="2">Female</mat-radio-button>
+  </mat-radio-group>
+  <mat-radio-group formControlName="jlpt" fxLayout="column">
+    <p>JLPT Test</p>
+    <mat-radio-button fxFlex class="radio" value="1">1st</mat-radio-button>
+    <mat-radio-button fxFlex class="radio" value="2">2nd</mat-radio-button>
+  </mat-radio-group>
+  <button mat-button color="primary">Submit</button>
+</form>

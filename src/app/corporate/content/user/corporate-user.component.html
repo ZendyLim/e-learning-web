@@ -1,0 +1,5 @@
+<div *ngIf="!loading">
+  <app-corporate-user-card *ngFor="let user of users" [user]="user"></app-corporate-user-card>
+</div>
+<mat-progress-spinner *ngIf="loading"></mat-progress-spinner>
+<app-corporate-user-add-button id="add-button" (onClick)="openAddDialog()"></app-corporate-user-add-button>
