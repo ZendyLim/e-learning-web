@@ -1,0 +1,14 @@
+<div class="logo">
+        <a class="simple-text" routerLink="/admin" routerLinkActive="active">
+            <div class="logo-img">
+                <img src="./assets/logo.png">
+            </div>
+            N5 Dashboard
+        </a>
+    </div>
+
+<aside class="aside">
+  <div class="aside-inner">
+    <app-admin-sidebar-item *ngFor="let item of items" [item]="item"></app-admin-sidebar-item>
+  </div>
+</aside>

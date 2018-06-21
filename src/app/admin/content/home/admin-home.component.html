@@ -1,0 +1,62 @@
+<div class="content-wrapper">
+<div class="panel panel-default animated fadeInRight">
+<div>
+<div>
+<div class="form-heading">
+  <h1>Total Students</h1>
+</div>
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+            <th>No</th>
+            <th>Age</th>
+            <th>Total</th>
+            <th>Male</th>
+            <th>Female</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let student of students; let i = index">
+            <td>{{ i+1 }}</td>
+            <td>{{ student.age }}</td>
+            <td>{{ student.total }}</td>
+            <td>{{ student.male }}</td>
+            <td>{{ student.female }}</td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default animated fadeInRight">
+<div>
+<div>
+<div class="form-heading">
+  <h1>Total Corporates</h1>
+</div>
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Name</th>
+          <th>Username</th>
+          <th>Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let corporate_user of corporate_users; let i = index">
+          <td>{{ i+1 }}</td>
+          <td>{{ corporate_user.name }}</td>
+          <td>{{ corporate_user.username }}</td>
+          <td>{{ corporate_user.status }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+</div>

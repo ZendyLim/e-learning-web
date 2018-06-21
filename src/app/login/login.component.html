@@ -1,0 +1,21 @@
+<div class="is-auth">
+<form [formGroup]="loginForm" id="login-form-container" fxLayout="column" fxFlexAlign="center"
+      (submit)="login()">
+   <div class="form-heading">
+     <h1>GAB ADMIN</h1>
+   </div>
+   <div class="form-body">
+     <div class="form-group has-feedback">
+       <input name="email" required type="email" placeholder="Enter Email" class="form-control" formControlName="username">
+       <span class="fa fa-envelope form-control-feedback text-muted"></span>
+     </div>
+     <div class="form-group has-feedback">
+       <input name="password" required type="password" placeholder="Password" class="form-control" formControlName="password">
+       <span class="fa fa-lock form-control-feedback text-muted"></span>
+     </div>
+     <button type="submit" class="btn btn-block btn-primary mt-lg">
+       Login
+     </button>
+   </div>
+ </form>
+</div>
