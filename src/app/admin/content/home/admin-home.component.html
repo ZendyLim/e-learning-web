@@ -52,7 +52,7 @@
           <td>{{ i+1 }}</td>
           <td>{{ corporate_user.name }}</td>
           <td>{{ corporate_user.username }}</td>
-          <td>{{ corporate_user.status }}</td>
+          <td><span *ngIf="corporate_user.status">{{ printStatus(corporate_user.status) }}</span></td>
         </tr>
       </tbody>
     </table>
