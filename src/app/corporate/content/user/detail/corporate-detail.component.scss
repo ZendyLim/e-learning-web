@@ -1,3 +1,45 @@
 .h-75 {
   height: 75px;
 }
+.border-black{
+  border: 1px solid #000;
+}
+span.text_detail {
+  display: block;
+  font-size: 20px;
+  color: #000;
+  padding: 5px 0;
+}
+.h-75 {
+  height: 75px;
+}
+.padding-10{
+  padding: 10px;
+}
+.box-data{
+  border: 3px solid #486b00;
+  border-radius: 5px;
+  background: #A2C523;
+  color: #fff;
+  text-align: center;
+}
+.data{
+  display: block;
+  font-size: 20px;
+}
+.form-heading {
+ padding: 10px 15px;
+ background-color: cadetblue;
+ text-align: center;
+}
+
+.form-heading  h1 {
+ font-size: 18px;
+ line-height: 18px;
+ margin: 0;
+ padding: 10px 0;
+ color: #fff;
+}
+.bg-white{
+  background: #ffffff;
+}

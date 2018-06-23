@@ -1,1 +1,182 @@
-This is analytic pagew  
+<div class="tab_container">
+        <input id="tab1" type="radio" name="tabs" checked>
+        <label for="tab1"><span>OVERALL</span></label>
+
+        <input id="tab2" type="radio" name="tabs">
+        <label for="tab2"><span>GRAPH</span></label>
+
+
+        <section id="content1" class="tab-content">
+            <div class="content-wrapper">
+                <form [formGroup]="filterForm" (submit)="submitFilter()">
+                    <div class="form-body">
+                        <div class="form-group has-feedback">
+                            <span class="font-filter">Age : </span>
+                            <input name="startAge" required type="number" min="1" max="99" class="form-control" formControlName="startAge"> ~ <input name="endAge"  min="1" max="99" required type="number" class="form-control" formControlName="endAge"> <span class="font-filter"> 　歳</span>
+                        </div>    
+                    </div>
+                    <div class="form-body">
+                        <div class="form-group has-feedback">
+                            <span class="font-filter">Remaining Days : </span>
+                            <input name="remainingDate" required type="number"  min="1" max="99" class="form-control" formControlName="remainingDate">
+                        </div>    
+                    </div>
+
+                </form>
+                <div class="panel panel-default animated fadeInRight" >
+                <div>
+                <div>
+               
+                  <div class="table-responsive">
+                    <table class="table table-bordered table-hover" style="width:2000px;">
+                      <thead>
+                      <tr>
+                        <th rowspan="2" style="width:100px">氏名</th>
+                        <th rowspan="2"  style="width:100px">年齢</th>
+                        <th rowspan="2"  style="width:100px">開始年月日</th>
+                        <th rowspan="2"  style="width:100px">終了予定日</th>
+                        <th rowspan="2"  style="width:100px">残日数</th>
+                        <th rowspan="2"  style="width:100px">目標ペース</th>
+                        <th colspan="5"  style="width:250px">学習時間</th>
+                        <th colspan="2"  style="width:100px">進捗</th>
+                        <th colspan="7"  style="width:350px">成績</th>
+                        <th colspan="2"  style="width:100px">警告</th>
+                      </tr>
+                      <tr>
+                        <th>目標</th>
+                        <th>累計</th>
+                        <th>平均/日</th>
+                        <th>ログイン回数累計</th>
+                        <th>学習課</th>
+                        <th>進捗</th>
+                        <th>進捗率</th>
+                        <th>課</th>
+                        <th>語彙</th>
+                        <th>漢字</th>
+                        <th>文法</th>
+                        <th>読解</th>
+                        <th>聴解</th>
+                        <th>合計</th>
+                        <th>回数</th>
+                        <th>反応率</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr>
+                        <td>Hiragana2</td>
+                        <td>T1</td>
+                        <td>T1</td>
+                        <td>T1</td>
+                        <td>T1</td>
+                        <td>T1</td>
+                        <td>T1</td>
+                        <td>T1</td>
+                        <td>T1</td>
+                        <td>T1</td>
+                        <td>T1</td>
+                        <td>T1</td>
+                        <td>65</td>
+                        <td>65</td>
+                        <td>65</td>
+                        <td>65</td>
+                        <td>75</td>
+                        <td>70</td>
+                        <td>65</td>
+                        <td>7.7</td>
+                        <td>6.7</td>
+                        <td>7.2</td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+              
+        </section>
+
+        <section id="content2" class="tab-content">
+            <div class="content-wrapper">
+                <div class="panel panel-default animated fadeInRight">
+                <div>
+                <div>
+                  <div class="table-responsive">
+                    <table class="table table-bordered table-hover">
+                      <thead>
+                      <tr>
+                        <th rowspan="2">氏名</th>
+                        <th rowspan="2">年齢</th>
+                        <th rowspan="2">開始年月日</th>
+                        <th rowspan="2">終了予定日</th>
+                        <th rowspan="2">残日数</th>
+                        <th rowspan="2">目標ペース</th>
+                        <th colspan="5">学習時間</th>
+                        <th colspan="2">進捗</th>
+                        <th colspan="7">成績</th>
+                        <th colspan="2">警告</th>
+                      </tr>
+                      <tr>
+                        <th>学習時間</th>
+                        <th>学習時間</th>
+                        <th>学習時間</th>
+                        <th>学習時間</th>
+                        <th>学習時間</th>
+                        <th>進捗</th>
+                        <th>学習時間</th>
+                        <th>成績</th>
+                        <th>学習時間</th>
+                        <th>学習時間</th>
+                        <th>学習時間</th>
+                        <th>学習時間</th>
+                        <th>学習時間</th>
+                        <th>学習時間</th>
+                        <th>学習時間</th>
+                        <th>警告</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr>
+                        <td>Hiragana2</td>
+                        <td>T1</td>
+                        <td>65</td>
+                        <td>75</td>
+                        <td>70</td>
+                        <td>65</td>
+                        <td>7.7</td>
+                        <td>6.7</td>
+                        <td>7.2</td>
+                      </tr>
+                      <tr>
+                        <td>Katakana2</td>
+                        <td>T1</td>
+                        <td>65</td>
+                        <td>75</td>
+                        <td>70</td>
+                        <td>65</td>
+                        <td>7.7</td>
+                        <td>6.7</td>
+                        <td>7.2</td>
+                      </tr>
+                      <tr>
+                        <td>Greeting2</td>
+                        <td>T1</td>
+                        <td>65</td>
+                        <td>75</td>
+                        <td>70</td>
+                        <td>65</td>
+                        <td>70.7</td>
+                        <td>62.7</td>
+                        <td>73.2</td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+          
+        </section>
+
+    </div>

@@ -35,4 +35,17 @@ export class CorporateUserService {
         observe: "response"
       })
   }
+
+  updateUser(body: any): Observable<any> {
+    return this._http.post(`https://e-learning-backend.herokuapp.com/v1/updateUser`,
+      body,
+      {
+        headers: {
+          'Authorization': localStorage.getItem('token'),
+          'Content-Type': 'application/json'
+        },
+        observe: "response"
+      })
+  }
+  
 }

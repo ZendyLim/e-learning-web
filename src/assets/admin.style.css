@@ -5013,7 +5013,7 @@ a {
 figure {
   margin: 0; }
 
-img {
+.logo-img img {
   vertical-align: middle; 
   width: 50px;
   top: 11px;
