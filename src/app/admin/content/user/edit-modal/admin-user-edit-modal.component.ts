@@ -7,6 +7,7 @@ import {MatDialogRef, MAT_DIALOG_DATA} from "@angular/material";
   templateUrl: './admin-user-edit-modal.component.html',
   styleUrls: ['./admin-user-edit-modal.component.scss']
 })
+
 export class AdminUserEditModalComponent implements OnInit {
   user: any[];
   newEditForm : FormGroup = new FormGroup({
@@ -34,5 +35,4 @@ export class AdminUserEditModalComponent implements OnInit {
       }
     }
   }
-
 }

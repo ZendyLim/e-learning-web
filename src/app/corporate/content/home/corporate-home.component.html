@@ -1,40 +1,33 @@
 <div class="content-wrapper">
-<div class="panel panel-default animated fadeInRight">
-<div>
-<div>
-<div class="form-heading">
-  <h1>Total Students</h1>
-</div>
-  <div class="table-responsive">
-    <table class="table table-bordered table-hover">
-      <thead>
-      <tr>
-        <th>Age</th>
-        <th>Total</th>
-        <th>Average</th>
-        <th>Male</th>
-        <th>Female</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-        <td>18-20</td>
-        <td>12</td>
-        <td>16</td>
-        <td>7</td>
-        <td>4</td>
-      </tr>
-      <tr>
-        <td>21-25</td>
-        <td>14</td>
-        <td>23</td>
-        <td>12</td>
-        <td>2</td>
-      </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-</div>
-</div>
-</div>
+    <div class="panel panel-default animated fadeInRight">
+    <div>
+    <div>
+    <div class="form-heading">
+      <h1>Total Students</h1>
+    </div>
+      <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr>
+                <th>No</th>
+                <th>Age</th>
+                <th>Total</th>
+                <th>Male</th>
+                <th>Female</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let student of students; let i = index">
+                <td>{{ i+1 }}</td>
+                <td>{{ student.age }}</td>
+                <td>{{ student.total }}</td>
+                <td>{{ student.male }}</td>
+                <td>{{ student.female }}</td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    </div>
+    </div>
+    

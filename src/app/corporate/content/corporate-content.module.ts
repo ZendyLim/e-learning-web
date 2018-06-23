@@ -14,6 +14,10 @@ const routes: Routes = [
         loadChildren: './user/corporate-user.module#CorporateUserModule'
       },
       {
+        path: 'user/:id',
+        loadChildren: './user/corporate-user.module#CorporateUserModule'
+      },
+      {
         path: 'home',
         loadChildren: './home/corporate-home.module#CorporateHomeModule'
       },

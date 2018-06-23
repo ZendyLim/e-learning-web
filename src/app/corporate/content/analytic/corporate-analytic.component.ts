@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-corporate-analytic',
@@ -8,8 +9,14 @@ import { Component, OnInit } from '@angular/core';
 export class CorporateAnalyticComponent implements OnInit {
 
   constructor() { }
-
+  filterForm : FormGroup = new FormGroup({
+    startAge: new FormControl(''),
+    endAge: new FormControl(''),
+    remainingDate: new FormControl(''),
+  });
   ngOnInit() {
   }
-
+  submitFilter(){
+    console.log(this.filterForm.value)
+  }
 }

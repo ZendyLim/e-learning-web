@@ -36,9 +36,9 @@ export class LoginComponent implements OnInit {
           this.loginForm.enable();
           this.requesting = false;
           if (jwt(response.headers.get('Authorization')).data.role == 'GAB_ADMIN') {
-            this._router.navigateByUrl('/admin/corporate');
+            this._router.navigateByUrl('/admin/home');
           } else {
-            this._router.navigateByUrl('/corporate/user');
+            this._router.navigateByUrl('/corporate/home');
           }
         },
         (error: HttpErrorResponse) => {

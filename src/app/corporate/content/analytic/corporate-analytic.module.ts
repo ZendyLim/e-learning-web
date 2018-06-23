@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { CorporateAnalyticComponent } from './corporate-analytic.component';
 import {RouterModule, Routes} from "@angular/router";
 
+import {ReactiveFormsModule} from "@angular/forms";
+
 const routes: Routes = [
   {
     path: '',
@@ -13,6 +15,7 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     RouterModule.forChild(routes)
   ],
   declarations: [CorporateAnalyticComponent],
