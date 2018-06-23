@@ -508,13 +508,47 @@ export class CorporateDetailComponent implements OnInit {
     }
   }
 
-  setTime(time){
-    var newDate = new Date("01-01-2017");
+  setTime(startTime, endTime){
+    // var newDate = new Date("01-01-2017");
 
-    var setTounix = newDate.getTime();
-    var getTimeDate = new Date(setTounix + time);
-
-    return this.formatTime(getTimeDate);
+    // var setTounix = newDate.getTime();
+    // var getTimeDate = new Date(setTounix + time);
+    var startTimeArr;
+    var endTimeArr;
+    
+    var startTimeData = this.formatTime(startTime);
+    startTimeArr = startTimeData.split(":");
+    var endTimeData = this.formatTime(endTime);
+    endTimeArr = endTimeData.split(":");
+    var minuteSet = endTimeArr[1] - startTimeArr[1];
+    var hoursSet = 0;
+    if(minuteSet < 0){
+      minuteSet = 60 + minuteSet;
+    
+      var hoursSet = endTimeArr[0] - startTimeArr[0] - 1;
+    }else{
+      var hoursSet = endTimeArr[0] - startTimeArr[0] ;      
+    }
+    if(hoursSet < 0){
+      hoursSet = 24 + hoursSet;
+    }
+    var returnHours = ""; 
+    var returnMinutes = ""; 
+     
+    if(hoursSet.toString().length == 1){
+      returnHours = "0" + hoursSet.toString();
+    }else{
+      returnHours =  hoursSet.toString();
+    }
+     
+    if(minuteSet.toString().length == 1){
+      returnMinutes = "0" + minuteSet.toString();
+    }else{
+      returnMinutes =  minuteSet.toString();
+    }
+  
+    return returnHours + ":" + returnMinutes;
+//    return this.formatTime(getTimeDate);
   }
   getAllcountTotal(val){
     return Math.floor((this.countTotal(this.studyArr[val].VOCABULARY.correct , this.studyArr[val].VOCABULARY.mistake) + this.countTotal(this.studyArr[val].KANJI.correct , this.studyArr[val].KANJI.mistake) + this.countTotal(this.studyArr[val].GRAMMAR.correct , this.studyArr[val].GRAMMAR.mistake) + this.countTotal(this.studyArr[val].LISTENING.correct , this.studyArr[val].LISTENING.mistake) + this.countTotal(this.studyArr[val].READING.correct , this.studyArr[val].READING.mistake)) / 7);

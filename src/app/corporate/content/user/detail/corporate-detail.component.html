@@ -97,10 +97,10 @@
             <th>復習時間</th>
           </tr>
           <tr *ngFor="let login of setLogin">
-            <td>{{ formatDate(login.startTime) }}</td>
-            <td>{{ formatTime(login.startTime) }} </td>
-            <td>{{ formatTime(login.endTime) }} </td>
-            <td>{{ setTime(login.time) }}</td>
+            <td  *ngIf="setTime(login.startTime,login.endTime) !== '00:00'">{{ formatDate(login.startTime) }}</td>
+            <td  *ngIf="setTime(login.startTime,login.endTime) !== '00:00'">{{ formatTime(login.startTime) }} </td>
+            <td  *ngIf="setTime(login.startTime,login.endTime) !== '00:00'">{{ formatTime(login.endTime) }} </td>
+            <td  *ngIf="setTime(login.startTime,login.endTime) !== '00:00'">{{ setTime(login.startTime,login.endTime) }}</td>
           </tr>
        </table>
       </div>
