@@ -21,6 +21,15 @@ export class AdminHomeComponent implements OnInit {
     this.getTotalStudents();
   }
 
+  printStatus(id){
+    var count = this._homeService.statusArr.length;
+    for(var i = 0; i<count; i++){
+      if(this._homeService.statusArr[i]['id'] == id){
+        return this._homeService.statusArr[i]['title'];
+      }
+    }
+  }
+
   getCorporateUsers() {
     this.loading = true;
     this._homeService.getCorporateUsers()
