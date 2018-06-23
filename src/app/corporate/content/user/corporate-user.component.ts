@@ -130,8 +130,15 @@ export class CorporateUserComponent implements OnInit {
       })
   }
   
+  formatJlpt(year, batch){
+    if(year !== "" && batch !== ""){
+      return year + "年 "　+ batch + " Batch";
+    }else{
+      return "";
+    }
+  }
   addNewUser(body: any){
-    this._userService.updateUser(body)
+    this._userService.addUser(body)
       .subscribe((result) => {
         console.log(result);
         alert('User Created!');

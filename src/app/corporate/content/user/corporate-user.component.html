@@ -34,7 +34,7 @@
               <td>{{ user.company }}</td>
               <td>{{ user.department }}</td>
               <td>{{ printJoindate(user.joinDate) }}</td>
-              <td>{{ user.department }}</td>
+              <td>{{ formatJlpt(user.jlptYear , user.jlpt) }}</td>
               <td><span *ngIf="user.status">{{ printStatus(user.status) }}</span></td>
               <td>
                 <span class="op-col text-center">
