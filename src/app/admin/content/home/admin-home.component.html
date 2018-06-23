@@ -17,12 +17,12 @@
           </tr>
           </thead>
           <tbody>
-          <tr *ngFor="let student of students; let i = index">
+          <tr *ngFor="let category of categories; let i = index">
             <td>{{ i+1 }}</td>
-            <td>{{ student.age }}</td>
-            <td>{{ student.total }}</td>
-            <td>{{ student.male }}</td>
-            <td>{{ student.female }}</td>
+            <td>{{ category.name }}</td>
+            <td>{{ category.total }}</td>
+            <td>{{ category.male }}</td>
+            <td>{{ category.female }}</td>
           </tr>
       </tbody>
     </table>

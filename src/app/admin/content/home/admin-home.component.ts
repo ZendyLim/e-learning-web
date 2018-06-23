@@ -9,7 +9,7 @@ import {AdminHomeService} from "./admin-home.service";
 export class AdminHomeComponent implements OnInit {
 
   corporate_users = [];
-  students = [];
+  categories = [];
   loading = false;
 
   constructor(private _homeService:AdminHomeService) { 
@@ -18,7 +18,7 @@ export class AdminHomeComponent implements OnInit {
 
   ngOnInit() {
     this.getCorporateUsers();
-    this.getTotalStudents();
+    this.getStudentsOverview();
   }
 
   printStatus(id){
@@ -41,11 +41,11 @@ export class AdminHomeComponent implements OnInit {
       })
   }
 
-  getTotalStudents() {
+  getStudentsOverview() {
     this.loading = true;
-    this._homeService.getTotalStudents()
+    this._homeService.getStudentsOverview()
       .subscribe((result) => {
-        this.students = result.body.students;
+        this.categories = result.body.categories;
         this.loading = false;
       }, (err) => {
         console.error(err);
