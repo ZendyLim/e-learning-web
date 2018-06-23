@@ -8,15 +8,15 @@
       </div>
       <div class="col-md-10 col-xs-10 col-sm-10 border-black">
           <div class="row">
-            <div class="col-md-6 col-xs-6 col-sm-6">
-              <span class="text_detail">NAME : {{ users.name }}</span>
-              <span class="text_detail">GENDER : {{ users.gender }}</span>
-              <span class="text_detail">LAST EDUCATION : {{ users.gender }}</span>
-              <span class="text_detail">SCHOOL NAME : {{ users.latestEducationName }}</span>
+            <div *ngIf="users" class="col-md-6 col-xs-6 col-sm-6">
+              <span *ngIf="users.name" class="text_detail">NAME : {{ users.name }}</span>
+              <span *ngIf="users.gender" class="text_detail">GENDER : {{ users.gender }}</span>
+              <span *ngIf="users.latestEducation" class="text_detail">LAST EDUCATION : {{ users.latestEducation }}</span>
+              <span *ngIf="users.latestEducationName" class="text_detail">SCHOOL NAME : {{ users.latestEducationName }}</span>
             </div>
             <div class="col-md-6 col-xs-6 col-sm-6">
-                <span class="text_detail">ENGLISH LEVEL : {{ users.englishLevel }}</span>
-                <span class="text_detail">STUDY REASON : {{ users.studyReason }}</span>
+                <span *ngIf="users.englishLevel" class="text_detail">ENGLISH LEVEL : {{ users.englishLevel }}</span>
+                <span *ngIf="users.studyReason" class="text_detail">STUDY REASON : {{ users.studyReason }}</span>
             </div>
           </div>
       </div>

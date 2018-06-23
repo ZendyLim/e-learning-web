@@ -70,4 +70,70 @@ export class CorporateUserService {
       })
   }
   
+     //Make sorting
+     getSorting(array, orderBy, asc = true){
+      if (!orderBy || orderBy.trim() == ""){
+        return array;
+      } 
+  
+      //ascending
+      if (asc){
+          return Array.from(array).sort((item1: any, item2: any) => { 
+          return this.orderByComparator(item1[orderBy], item2[orderBy]);
+        });
+      }
+      else{
+        //not asc
+          return Array.from(array).sort((item1: any, item2: any) => { 
+
+          return this.orderByComparator(item2[orderBy], item1[orderBy]);
+        });
+      }
+  
+  }
+  //order Sorting
+  orderByComparator(a:any, b:any):number{
+     if(a !== null && b !== null){     
+      if((isNaN(parseFloat(a)) || !isFinite(a)) || (isNaN(parseFloat(b)) || !isFinite(b))){
+        //Isn't a number so lowercase the string to properly compare
+          if(this.checkFormatDate(a) || this.checkFormatDate(b)){
+              if(a < b) return -1;
+              if(a > b) return 1;  
+          }else{
+              console.log(a.toLowerCase() + ":" + b.toLowerCase() + ":" + (a.toLowerCase() < b.toLowerCase()));
+
+              if(a.toLowerCase() < b.toLowerCase()) return -1;
+              if(a.toLowerCase() > b.toLowerCase()) return 1;  
+          }
+      }
+      else{
+          
+        //Parse strings as numbers to compare properly
+        if(parseFloat(a) < parseFloat(b)) return -1;
+        if(parseFloat(a) > parseFloat(b)) return 1;
+       }
+  
+      return 0; //equal each other
+      }else{
+          return 0;
+      }
+  }
+
+  
+
+  checkFormatDate(date) {
+    var parms = date.split(/[\.\-\/]/);
+    var yyyy = parseInt(parms[0],10);
+    var mm   = parseInt(parms[1],10);
+    var dd   = parseInt(parms[2],10);
+    var dateCheck = new Date(yyyy,mm-1,dd,0,0,0,0);
+    return mm === (dateCheck.getMonth()+1) && dd === dateCheck.getDate() && yyyy === dateCheck.getFullYear();
+
+    // var parsedDate = Date.parse(date);
+    // if (isNaN(date) && !isNaN(parsedDate)) {
+    //     return true;
+    // }else{
+    //     return false;
+    // }
+}
 }

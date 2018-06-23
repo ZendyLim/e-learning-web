@@ -13,6 +13,7 @@ export class CorporateDetailComponent implements OnInit {
   users;
   idVal;
   activities;
+  setLogin;
   constructor(private activeRoute: ActivatedRoute, private _userService: CorporateUserService) { }
 
   ngOnInit( ) {
@@ -27,12 +28,19 @@ export class CorporateDetailComponent implements OnInit {
         this.users = result.body.user;
         this.activities = result.body.activities;
         this.loading = false;
-        console.log(this.users);
-        console.log(this.activities);
-
+        this.setLoginFun();
       }, (err) => {
         console.error(err);
       })
+  }
+  setLoginFun(){
+    var count = this.activities.length;
+    var login = [];
+    console.log(this.activities);
+    for(var i = 0; i<count;i++){
+      var date = new Date(this.activities[i].startTime * 1000);
+      console.log(date);
+    }
   }
 
 }
