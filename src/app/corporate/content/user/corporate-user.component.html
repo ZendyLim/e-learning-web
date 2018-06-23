@@ -1,5 +1,48 @@
-<div *ngIf="!loading">
+<!-- Work<div *ngIf="!loading">
   <app-corporate-user-card *ngFor="let user of users" [user]="user"></app-corporate-user-card>
 </div>
 <mat-progress-spinner *ngIf="loading"></mat-progress-spinner>
-<app-corporate-user-add-button id="add-button" (onClick)="openAddDialog()"></app-corporate-user-add-button>
+<app-corporate-user-add-button id="add-button" (onClick)="openAddDialog()"></app-corporate-user-add-button> -->
+
+<div class="row op animated fadeInRight">
+    <div class="col-sm-10">
+      <span>Search:&nbsp;&nbsp;</span>
+      <form  style="width:100%;" >
+        <input type="text" class="form-control search" formControlName="search"> 
+      </form>
+    </div>
+    <div class="col-sm-2">
+      <button type="button" class="btn btn-success">
+        <i class="fa fa-plus"></i> Create</button>
+    </div>
+  </div>
+  <div class="panel panel-default animated fadeInRight">
+    <div>
+      <div>
+        <div class="table-responsive">
+          <table class="table table-bordered table-hover">
+            <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>status</th>
+              <th>Operation</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></span></td>
+              <td>
+                <span class="op-col text-center">
+                  <a class="text-warning" title="Edit"><i class="fas fa-edit" ></i></a>
+                </span>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+  </div>
+  </div>
