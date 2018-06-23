@@ -88,8 +88,7 @@ export class CorporateUserComponent implements OnInit {
 
    }else{
      this.getUsers();
-   }
-    
+   }  
   }
 
   getUsers() {
@@ -132,7 +131,7 @@ export class CorporateUserComponent implements OnInit {
   
   formatJlpt(year, batch){
     if(year !== "" && batch !== ""){
-      return year + "年 "　+ batch + " Batch";
+      return year + "年 "　+ batch + "  Batch";
     }else{
       return "";
     }

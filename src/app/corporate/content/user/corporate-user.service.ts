@@ -34,6 +34,18 @@ export class CorporateUserService {
       })
   }
 
+
+  getStudentByID(value:string): Observable<any> {
+    return this._http.get(`https://e-learning-backend.herokuapp.com/v1/getStudentInfo?studentId=` + value,
+      {
+        headers: {
+          'Authorization': localStorage.getItem('token'),
+          'Content-Type': 'application/json'
+        },
+        observe: "response"
+      })
+  }
+
   addUser(body: any): Observable<any> {
     return this._http.post(`https://e-learning-backend.herokuapp.com/v1/createUser`,
       body,
