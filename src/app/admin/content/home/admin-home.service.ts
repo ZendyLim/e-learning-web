@@ -27,8 +27,8 @@ export class AdminHomeService {
       })
   }
 
-  getTotalStudents(): Observable<any> {
-    return this._http.get(`http://www.mocky.io/v2/5b2b01c83000006b009cd51d`,
+  getStudentsOverview(): Observable<any> {
+    return this._http.get(`https://e-learning-backend.herokuapp.com/v1/getStudentsOverview`,
       {
         headers: {
           'Authorization': localStorage.getItem('token')
