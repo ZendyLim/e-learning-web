@@ -7,7 +7,13 @@ export class CorporateUserService {
 
   constructor(private _http: HttpClient) {
   }
-
+  statusArr = [{
+    id: "1",
+    title: "Active"
+  },{
+    id: "0",
+    title: "Non Active"
+  }];
   getUsers(): Observable<any> {
     return this._http.get(`https://e-learning-backend.herokuapp.com/v1/getUsers`,
       {

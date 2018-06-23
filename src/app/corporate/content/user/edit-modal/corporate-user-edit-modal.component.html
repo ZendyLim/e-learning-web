@@ -1,6 +1,6 @@
-<form [formGroup]="newUserForm" (submit)="submit()">
-    <div class="form-heading">
-        <h1>Create Student</h1>
+    <form [formGroup]="newEditForm" (submit)="submit()">
+      <div class="form-heading">
+        <h1>Edit Student</h1>
       </div>
       <div class="form-body">
         <div class="form-group has-feedback">
@@ -38,12 +38,6 @@
           </mat-form-field>
         </div>
         <div class="form-group has-feedback">
-         Password :
-        </div>        
-        <div class="form-group has-feedback">
-         <input name="password" required type="password" placeholder="Enter Password" class="form-control" formControlName="password">
-        </div>
-        <div class="form-group has-feedback">
           Jlpt Test :
         </div>        
         <div class="form-group has-feedback">
@@ -57,9 +51,17 @@
             <option value="2">2nd Batch</option>
           </select>
         </div>
-        
+        <div class="form-group has-feedback">
+          Status :
+        </div>        
+        <div class="form-group has-feedback">
+          <select name="status" required type="status" placeholder="Enter Status" [ngModel]="user.status" class="form-control" formControlName="status">
+            <option value="1">Active</option>
+            <option value="0">Non Active</option>
+          </select>        
+        </div>        
         <button type="submit" class="btn btn-block btn-primary mt-lg">
-          Create
+          Submit
         </button>
       </div>
-    </form>
+   </form>
