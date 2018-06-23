@@ -19,19 +19,57 @@ export class CorporateUserEditModalComponent implements OnInit {
     joinDate: new FormControl(''),
     birthday: new FormControl(''),
     jlpt: new FormControl(''),
-    jlptyear: new FormControl(''),
+    jlptYear: new FormControl(''),
     status: new FormControl(1)
   });
-
+ date;
   constructor(public dialogRef: MatDialogRef<CorporateUserEditModalComponent>, @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit() {
     console.log(this.data.index);
    this.user = this.data.index;
+    this.date = new Date(this.user["joinDate"] * 1000);
   }
 
   submit(){
     this.newEditForm.value['_id'] = this.user['_id'];
+    if(this.newEditForm.value['username'] == ""){
+      alert('please input email');
+    }else{
+      if(this.newEditForm.value['name'] == ""){
+        alert('please input name');
+      }else{
+        if(this.newEditForm.value['company'] == ""){
+          alert('please input company');
+        }else{
+          if(this.newEditForm.value['department'] == ""){
+            alert('please input department');
+          }else{
+            if(this.newEditForm.value['joinDate'] == ""){
+              alert('please pick join date');
+            }else{
+              if(this.newEditForm.value['jlptYear'] == ""){
+              alert('please input jlpt year');
+              }else{
+              if(this.newEditForm.value['jlpt'] == ""){
+                alert('please input jlpt batch');
+              }else{
+                if(this.newEditForm.value['status'] == ""){
+                  alert('please select status');
+                }else{
+                    var date = this.newEditForm.value['joinDate'];
+                  var dataparse = this.newEditForm.value;
+                  dataparse['joinDate'] = (date.getTime() / 1000);
+                  this.dialogRef.close(dataparse);        
+                  }
+                }  
+              }  
+            }
+          }
+        }
+      }
+    }
+
     if(this.newEditForm.value['username'] == ''){
       alert('Please fill email');
     }else{

@@ -17,9 +17,8 @@ export class CorporateUserAddModalComponent implements OnInit {
     department: new FormControl(''),
     password: new FormControl(''),
     joinDate: new FormControl(''),
-    birthday: new FormControl(''),
     jlpt: new FormControl(''),
-    jlptyear: new FormControl('')
+    jlptYear: new FormControl('')
   });
 
   constructor(public dialogRef: MatDialogRef<CorporateUserAddModalComponent>) { }
@@ -28,9 +27,45 @@ export class CorporateUserAddModalComponent implements OnInit {
   }
 
   submit(){
-   var date = this.newUserForm.value['joinDate'];
-   this.newUserForm.value['joinDate'] = date.getTime() / 1000;
-    this.dialogRef.close(this.newUserForm.value);
+    console.log(this.newUserForm.value['joinDate']);
+    if(this.newUserForm.value['username'] == ""){
+      alert('please input email');
+    }else{
+      if(this.newUserForm.value['name'] == ""){
+        alert('please input name');
+      }else{
+        if(this.newUserForm.value['company'] == ""){
+          alert('please input company');
+        }else{
+          if(this.newUserForm.value['department'] == ""){
+            alert('please input department');
+          }else{
+            if(this.newUserForm.value['joinDate'] == ""){
+              alert('please pick join date');
+            }else{
+              if(this.newUserForm.value['jlptYear'] == ""){
+                alert('please input jlpt year');
+                }else{
+                  if(this.newUserForm.value['jlptYear'] == ""){
+                    alert('please input jlpt year');
+                    }else{
+                      if(this.newUserForm.value['jlpt'] == ""){
+                        alert('please input jlpt batch');
+                      }else{
+                          var date = this.newUserForm.value['joinDate'];
+                          var dataparse = this.newUserForm.value;
+                          dataparse['joinDate'] = (date.getTime() / 1000);
+                          this.dialogRef.close(dataparse);        
+                      }  
+                    }  
+  
+                }
+            }
+          }
+        }
+      }
+    }
+   
   }
 
 }

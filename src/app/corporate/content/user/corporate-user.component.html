@@ -19,14 +19,22 @@
             <tr>
               <th>Name</th>
               <th>Email</th>
+              <th>company</th>
+              <th>department</th>
+              <th>Join date</th>
+              <th>JLPT TEST</th>
               <th>status</th>
               <th>Operation</th>
             </tr>
             </thead>
             <tbody>
             <tr *ngFor="let user of users; let i of index ">
+              <td>{{ user.name }}</td>
               <td>{{ user.username }}</td>
-              <td>{{ user.username }}</td>
+              <td>{{ user.company }}</td>
+              <td>{{ user.department }}</td>
+              <td>{{ printJoindate(user.joinDate) }}</td>
+              <td>{{ user.department }}</td>
               <td><span *ngIf="user.status">{{ printStatus(user.status) }}</span></td>
               <td>
                 <span class="op-col text-center">

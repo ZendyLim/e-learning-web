@@ -32,7 +32,7 @@
         </div>        
         <div class="form-group has-feedback">
           <mat-form-field>
-            <input matInput formControlName="joinDate" [matDatepicker]="joinDatePicker" placeholder="Join Date">
+            <input matInput formControlName="joinDate" [matDatepicker]="joinDatePicker"  placeholder="Join Date">
             <mat-datepicker-toggle matSuffix [for]="joinDatePicker"></mat-datepicker-toggle>
             <mat-datepicker #joinDatePicker></mat-datepicker>
           </mat-form-field>
@@ -47,7 +47,7 @@
           Jlpt Test :
         </div>        
         <div class="form-group has-feedback">
-          <select name="jlptyear" required type="jlptyear" style="width:47%;   display: inline-block;"  class="form-control" formControlName="jlptyear">
+          <select name="jlptyear" required type="jlptyear" style="width:47%;   display: inline-block;"  class="form-control" formControlName="jlptYear">
             <option value="">Select year</option>
             <option *ngFor="let year of years" [ngValue]="year">{{ year }}</option>
           </select>

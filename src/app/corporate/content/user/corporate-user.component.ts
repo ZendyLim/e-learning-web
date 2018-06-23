@@ -38,10 +38,46 @@ export class CorporateUserComponent implements OnInit {
       }
     }
   }
+  printJoindate(join){
+    if(join == undefined){
+      return "";
+    }else{
+      var date = new Date(join * 1000);
+      return this.formatDate(date);
+    }
+  }
+
+   //formating date
+   formatDate(date){
+    var sepDate = new Date(date);
+    var year = sepDate.getFullYear();
+    var month = sepDate.getMonth() + 1;
+    
+    var printMonth :string;
+    var printDays : string;
+
+    if( month < 10){
+        printMonth = "0" + month;
+     }else{
+        printMonth = "" + month;
+     }
+     var days = sepDate.getDate();
+     if( days < 10){
+        printDays = "0" + days;
+     }else{
+        printDays = "" + days;
+     }
+     
+    // console.log(dateSep);    q
+     return year + "年" + printMonth + "月" + printDays + "日";
+    
+}
+
   getBySearch(value){
+   if(value !== undefined){
     this.loading = true;
-    //this._userService.getUserBySearch(value)
-    this._userService.getUsers()
+    this._userService.getUserBySearch(value)
+    //this._userService.getUsers()
       .subscribe((result) => {
         this.users = result.body.users;
         this.loading = false;
@@ -49,6 +85,10 @@ export class CorporateUserComponent implements OnInit {
       }, (err) => {
         console.error(err);
       })
+
+   }else{
+     this.getUsers();
+   }
     
   }
 
@@ -56,7 +96,7 @@ export class CorporateUserComponent implements OnInit {
     this.loading = true;
     this._userService.getUsers()
       .subscribe((result) => {
-        console.log(result);
+        console.log(result.body.users);
         this.users = result.body.users;
         this.loading = false;
       }, (err) => {
@@ -72,8 +112,8 @@ export class CorporateUserComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        console.log( JSON.stringify(result));
-        //this.addNewUser(result);
+        //console.log( JSON.stringify(result));
+        this.addNewUser(result);
       }
     });
   }
@@ -81,7 +121,7 @@ export class CorporateUserComponent implements OnInit {
 
   updateNewUser(body: any){
     console.log(body);
-    this._userService.addUser(body)
+    this._userService.updateUser(body)
       .subscribe((result) => {
         alert('User Updated!');
         this.getUsers();
@@ -91,7 +131,7 @@ export class CorporateUserComponent implements OnInit {
   }
   
   addNewUser(body: any){
-    this._userService.addUser(body)
+    this._userService.updateUser(body)
       .subscribe((result) => {
         console.log(result);
         alert('User Created!');
@@ -115,7 +155,7 @@ export class CorporateUserComponent implements OnInit {
           user : result
         }
         console.log(JSON.stringify(value_parse));
-        //this.updateNewUser(value_parse);
+        this.updateNewUser(value_parse);
       }
     });
   }

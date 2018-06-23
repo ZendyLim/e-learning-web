@@ -7,32 +7,32 @@
           Email :
         </div>        
         <div class="form-group has-feedback">
-          <input name="email" required type="email" placeholder="Enter Email" class="form-control" formControlName="username">
+          <input name="email" required type="email" placeholder="Enter Email" class="form-control" [ngModel]="user.username" formControlName="username">
         </div>
         <div class="form-group has-feedback">
           Name :
         </div>        
         <div class="form-group has-feedback">
-          <input name="name" required type="text" placeholder="Enter Name" class="form-control" formControlName="name">
+          <input name="name" required type="text" placeholder="Enter Name" class="form-control"  [ngModel]="user.name" formControlName="name">
         </div>
         <div class="form-group has-feedback">
           Company :
         </div>        
         <div class="form-group has-feedback">
-          <input name="company" required type="text" placeholder="Enter Company" class="form-control" formControlName="company">
+          <input name="company" required type="text" placeholder="Enter Company" class="form-control"  [ngModel]="user.company" formControlName="company">
         </div>
         <div class="form-group has-feedback">
           Department :
         </div>        
         <div class="form-group has-feedback">
-          <input name="department" required type="text" placeholder="Enter Department" class="form-control" formControlName="department">
+          <input name="department" required type="text" placeholder="Enter Department" class="form-control"  [ngModel]="user.department" formControlName="department">
         </div>
         <div class="form-group has-feedback">
           Join date :
         </div>        
         <div class="form-group has-feedback">
           <mat-form-field>
-            <input matInput formControlName="joinDate" [matDatepicker]="joinDatePicker" placeholder="Join Date">
+            <input matInput formControlName="joinDate" [matDatepicker]="joinDatePicker" [ngModel]="date" placeholder="Join Date">
             <mat-datepicker-toggle matSuffix [for]="joinDatePicker"></mat-datepicker-toggle>
             <mat-datepicker #joinDatePicker></mat-datepicker>
           </mat-form-field>
@@ -41,11 +41,11 @@
           Jlpt Test :
         </div>        
         <div class="form-group has-feedback">
-          <select name="jlptyear" required type="jlptyear" style="width:47%;   display: inline-block;"  class="form-control" formControlName="jlptyear">
+          <select name="jlptyear" required  style="width:47%;   display: inline-block;"  [ngModel]="user.jlptYear" class="form-control" formControlName="jlptYear">
             <option value="">Select year</option>
             <option *ngFor="let year of years" [ngValue]="year">{{ year }}</option>
           </select>
-          <select name="jlpt" required type="jlpt"  style="width:47%;  margin-left:10px;   display: inline-block;" class="form-control" formControlName="jlpt">
+          <select name="jlpt" required  [ngModel]="user.jlpt" style="width:47%;  margin-left:10px;   display: inline-block;" class="form-control" formControlName="jlpt">
             <option value="">select batch</option>
             <option value="1">1st Batch</option>
             <option value="2">2nd Batch</option>
@@ -55,7 +55,7 @@
           Status :
         </div>        
         <div class="form-group has-feedback">
-          <select name="status" required type="status" placeholder="Enter Status" [ngModel]="user.status" class="form-control" formControlName="status">
+          <select name="status" required  placeholder="Enter Status" [ngModel]="user.status" class="form-control" formControlName="status">
             <option value="1">Active</option>
             <option value="0">Non Active</option>
           </select>        
