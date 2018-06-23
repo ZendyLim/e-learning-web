@@ -7,8 +7,8 @@
         <img class="img-responsive" src="https://assets.bound360.com/content/uploads/2014/08/shutterstock_149293433.jpg"/>
       </div>
       <div class="col-md-10 col-xs-10 col-sm-10 border-black">
-          <div class="row">
-            <div *ngIf="users" class="col-md-6 col-xs-6 col-sm-6">
+          <div *ngIf="checkUser()"  class="row">
+            <div class="col-md-6 col-xs-6 col-sm-6">
               <span *ngIf="users.name" class="text_detail">NAME : {{ users.name }}</span>
               <span *ngIf="users.gender" class="text_detail">GENDER : {{ users.gender }}</span>
               <span *ngIf="users.latestEducation" class="text_detail">LAST EDUCATION : {{ users.latestEducation }}</span>
@@ -16,45 +16,35 @@
             </div>
             <div class="col-md-6 col-xs-6 col-sm-6">
                 <span *ngIf="users.englishLevel" class="text_detail">ENGLISH LEVEL : {{ users.englishLevel }}</span>
-                <span *ngIf="users.studyReason" class="text_detail">STUDY REASON : {{ users.studyReason }}</span>
+                <span *ngIf="users.studyReason" class="text_detail">STUDY REASON : </span>
+                <span *ngIf="users.studyReason" class="text_detail2">{{ printStudyReason(users.studyReason) }}</span>
             </div>
           </div>
       </div>
     </div>
   </div>
   <div class="form-heading">
-      <h1>Total Students</h1>
+      <h1>学習計画</h1>
   </div>
-  <div class="content-wrapper bg-white">
+  <div class="content-wrapper bg-white" *ngIf="checkUser()" >
     <div class="row animated zoomIn amount ">
       <div class="col-md-3 col-xs-3 col-sm-3 padding-10">
         <div class="box-data">
           <span class="data">
-            what data
+            学習開始日
           </span>
           <span class="data">
-            what data
+            {{ printDate(users.startDate) }}
           </span>
         </div>
       </div>
       <div class="col-md-3 col-xs-3 col-sm-3 padding-10">
         <div class="box-data">
           <span class="data">
-            what data
+            目標終了日
           </span>
           <span class="data">
-            what data
-          </span>
-        </div>
-      
-      </div>
-      <div class="col-md-3 col-xs-3 col-sm-3 padding-10">
-        <div class="box-data">
-          <span class="data">
-            what data
-          </span>
-          <span class="data">
-            what data
+            {{ printDate(users.finishDate) }}
           </span>
         </div>
       
@@ -62,10 +52,21 @@
       <div class="col-md-3 col-xs-3 col-sm-3 padding-10">
         <div class="box-data">
           <span class="data">
-            what data
+            1週間の学習予定
           </span>
           <span class="data">
-            what data
+            {{ printDataWeek(users.studyDay, users.studyHours) }}
+          </span>
+        </div>
+      
+      </div>
+      <div class="col-md-3 col-xs-3 col-sm-3 padding-10">
+        <div class="box-data">
+          <span class="data">
+            目標終了日
+          </span>
+          <span class="data">
+            70時間
           </span>
         </div>
       
@@ -88,21 +89,26 @@
         </div>
       </div>
       <div class="col-md-9 col-xs-9 col-sm-9 padding-10">
-        <div class="box-data">
-          <span class="data">
-            what data
-          </span>
-          <span class="data">
-            what data
-          </span>
-        </div>
-      
+        <table class="table table-bordered table-hover">
+          <tr>
+            <th></th>
+            <th>ログイン</th>
+            <th>ログアウト</th>
+            <th>復習時間</th>
+          </tr>
+          <tr *ngFor="let login of setLogin">
+            <td>{{ formatDate(login.startTime) }}</td>
+            <td>{{ formatTime(login.startTime) }} </td>
+            <td>{{ formatTime(login.endTime) }} </td>
+            <td>{{ setTime(login.time) }}</td>
+          </tr>
+       </table>
       </div>
     </div>
   </div>
 
   <div class="form-heading">
-      <h1>Total Students</h1>
+      <h1>学習態度</h1>
   </div>
   <div class="content-wrapper bg-white">
     <div class="row animated zoomIn amount ">
@@ -117,15 +123,89 @@
         </div>
       </div>
       <div class="col-md-9 col-xs-9 col-sm-9 padding-10">
-        <div class="box-data">
-          <span class="data">
-            what data
-          </span>
-          <span class="data">
-            what data
-          </span>
-        </div>
-      
+        <table class="table table-bordered table-hover">
+          <tr>
+            <th></th>
+            <th>GOI</th>
+            <th>KANJI</th>
+            <th>BUNPO</th>
+            <th>LISTENING</th>
+            <th>READING</th>
+            <th>AVERAGE</th>
+          </tr>
+          <tr>
+            <td>トピック１</td>
+            <td>{{ countTotal(studyArr.T004.VOCABULARY.correct , studyArr.T004.VOCABULARY.mistake) }}% </td>
+            <td>{{ countTotal(studyArr.T004.KANJI.correct , studyArr.T004.KANJI.mistake) }}%</td>
+            <td>{{ countTotal(studyArr.T004.GRAMMAR.correct , studyArr.T004.GRAMMAR.mistake) }}%</td>
+            <td>{{ countTotal(studyArr.T004.LISTENING.correct , studyArr.T004.LISTENING.mistake) }}%</td>
+            <td>{{ countTotal(studyArr.T004.READING.correct , studyArr.T004.READING.mistake) }}%</td>
+            <td>{{ getAllcountTotal('T004') }}%</td>
+          </tr>
+          <tr>
+            <td>トピック２</td>
+            <td>{{ countTotal(studyArr.T005.VOCABULARY.correct , studyArr.T005.VOCABULARY.mistake) }}% </td>
+            <td>{{ countTotal(studyArr.T005.KANJI.correct , studyArr.T005.KANJI.mistake) }}%</td>
+            <td>{{ countTotal(studyArr.T005.GRAMMAR.correct , studyArr.T005.GRAMMAR.mistake) }}%</td>
+            <td>{{ countTotal(studyArr.T005.LISTENING.correct , studyArr.T005.LISTENING.mistake) }}%</td>
+            <td>{{ countTotal(studyArr.T005.READING.correct , studyArr.T005.READING.mistake) }}%</td>
+            <td>{{ getAllcountTotal('T005') }}%</td>
+          </tr>
+          <tr>
+            <td>トピック３</td>
+            <td>{{ countTotal(studyArr.T006.VOCABULARY.correct , studyArr.T006.VOCABULARY.mistake) }}% </td>
+            <td>{{ countTotal(studyArr.T006.KANJI.correct , studyArr.T006.KANJI.mistake) }}%</td>
+            <td>{{ countTotal(studyArr.T006.GRAMMAR.correct , studyArr.T006.GRAMMAR.mistake) }}%</td>
+            <td>{{ countTotal(studyArr.T006.LISTENING.correct , studyArr.T006.LISTENING.mistake) }}%</td>
+            <td>{{ countTotal(studyArr.T006.READING.correct , studyArr.T006.READING.mistake) }}%</td>
+            <td>{{ getAllcountTotal('T006') }}%</td>
+          </tr>
+          <tr>
+            <td>トピック４</td>
+            <td>{{ countTotal(studyArr.T007.VOCABULARY.correct , studyArr.T007.VOCABULARY.mistake) }}% </td>
+            <td>{{ countTotal(studyArr.T007.KANJI.correct , studyArr.T007.KANJI.mistake) }}%</td>
+            <td>{{ countTotal(studyArr.T007.GRAMMAR.correct , studyArr.T007.GRAMMAR.mistake) }}%</td>
+            <td>{{ countTotal(studyArr.T007.LISTENING.correct , studyArr.T007.LISTENING.mistake) }}%</td>
+            <td>{{ countTotal(studyArr.T007.READING.correct , studyArr.T007.READING.mistake) }}%</td>
+            <td>{{ getAllcountTotal('T007') }}%</td>
+          </tr>
+          <tr>
+            <td>トピック５</td>
+            <td>{{ countTotal(studyArr.T009.VOCABULARY.correct , studyArr.T009.VOCABULARY.mistake) }}% </td>
+            <td>{{ countTotal(studyArr.T009.KANJI.correct , studyArr.T009.KANJI.mistake) }}%</td>
+            <td>{{ countTotal(studyArr.T009.GRAMMAR.correct , studyArr.T009.GRAMMAR.mistake) }}%</td>
+            <td>{{ countTotal(studyArr.T009.LISTENING.correct , studyArr.T009.LISTENING.mistake) }}%</td>
+            <td>{{ countTotal(studyArr.T009.READING.correct , studyArr.T009.READING.mistake) }}%</td>
+            <td>{{ getAllcountTotal('T009') }}%</td>
+          </tr>
+          <tr>
+            <td>トピック６</td>
+            <td>{{ countTotal(studyArr.T010.VOCABULARY.correct , studyArr.T010.VOCABULARY.mistake) }}% </td>
+            <td>{{ countTotal(studyArr.T010.KANJI.correct , studyArr.T010.KANJI.mistake) }}%</td>
+            <td>{{ countTotal(studyArr.T010.GRAMMAR.correct , studyArr.T010.GRAMMAR.mistake) }}%</td>
+            <td>{{ countTotal(studyArr.T010.LISTENING.correct , studyArr.T010.LISTENING.mistake) }}%</td>
+            <td>{{ countTotal(studyArr.T010.READING.correct , studyArr.T010.READING.mistake) }}%</td>
+            <td>{{ getAllcountTotal('T010') }}%</td>
+          </tr>
+          <tr>
+            <td>トピック７</td>
+            <td>{{ countTotal(studyArr.T011.VOCABULARY.correct , studyArr.T011.VOCABULARY.mistake) }}% </td>
+            <td>{{ countTotal(studyArr.T011.KANJI.correct , studyArr.T011.KANJI.mistake) }}%</td>
+            <td>{{ countTotal(studyArr.T011.GRAMMAR.correct , studyArr.T011.GRAMMAR.mistake) }}%</td>
+            <td>{{ countTotal(studyArr.T011.LISTENING.correct , studyArr.T011.LISTENING.mistake) }}%</td>
+            <td>{{ countTotal(studyArr.T011.READING.correct , studyArr.T011.READING.mistake) }}%</td>
+            <td>{{ getAllcountTotal('T011') }}%</td>
+          </tr>
+          <tr>
+            <td>トピック８</td>
+            <td>{{ countTotal(studyArr.T012.VOCABULARY.correct , studyArr.T012.VOCABULARY.mistake) }}% </td>
+            <td>{{ countTotal(studyArr.T012.KANJI.correct , studyArr.T012.KANJI.mistake) }}%</td>
+            <td>{{ countTotal(studyArr.T012.GRAMMAR.correct , studyArr.T012.GRAMMAR.mistake) }}%</td>
+            <td>{{ countTotal(studyArr.T012.LISTENING.correct , studyArr.T012.LISTENING.mistake) }}%</td>
+            <td>{{ countTotal(studyArr.T012.READING.correct , studyArr.T012.READING.mistake) }}%</td>
+            <td>{{ getAllcountTotal('T012') }}%</td>
+          </tr>
+        </table>
       </div>
     </div>
   </div>
