@@ -20,7 +20,7 @@ export class CorporateHomeService {
   }
 
   getTotalStudents(): Observable<any> {
-    return this._http.get(`https://e-learning-backend.herokuapp.com/v1/getStudentsOverview`,
+    return this._http.get(`https://e-learning-backend.herokuapp.com/v1/getStudentsOverviewForCorporate`,
       {
         headers: {
           'Authorization': localStorage.getItem('token')

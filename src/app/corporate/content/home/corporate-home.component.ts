@@ -22,7 +22,7 @@ export class CorporateHomeComponent implements OnInit {
     this._homeService.getTotalStudents()
       .subscribe((result) => {
         console.log(result.body);
-        this.students = result.body.students;
+        this.students = result.body.categories;
         this.loading = false;
       }, (err) => {
         console.error(err);
