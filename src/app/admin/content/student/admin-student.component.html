@@ -16,27 +16,23 @@
 					      <thead>
 					      <tr>
 					        <th>人数</th>
-					        <th>18～20歳</th>
-					        <th>21～25歳</th>
-					        <th>26～30歳</th>
-					        <th>31～35歳</th>
-					        <th>36～40歳</th>
-					        <th>41歳以上</th>
+					        <th>～20歳</th>
+					        <th>20～29歳</th>
+					        <th>30～39歳</th>
+					        <th>40～49歳</th>
+					        <th>50歳～</th>
 					        <th>男性</th>
 					        <th>女性</th>
 					      </tr>
 					      </thead>
 					      <tbody>
 					      <tr>
-					        <td>20</td>
-					        <td>32</td>
-					        <td>12</td>
-					        <td>5</td>
-					        <td>22</td>
-					        <td>16</td>
-					        <td>3</td>
-					        <td>34</td>
-					        <td>23</td>
+									<td>{{ total }}</td>
+									<ng-container *ngFor="let category of categories; let i = index">
+											<td>{{ category.total }}</td>
+									</ng-container>
+					        <td>{{ male }}</td>
+					        <td>{{ female }}</td>
 					      </tr>
 					      </tbody>
 					    </table>
