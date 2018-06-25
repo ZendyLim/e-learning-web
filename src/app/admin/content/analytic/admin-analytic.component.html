@@ -38,38 +38,16 @@
 					      </tr>
 					      </thead>
 					      <tbody>
-					      <tr>
-					        <td>Hiragana</td>
-					        <td>T1</td>
-					        <td>65</td>
-					        <td>75</td>
-					        <td>70</td>
-					        <td>65</td>
-					        <td>7.7</td>
-					        <td>6.7</td>
-					        <td>7.2</td>
-					      </tr>
-					      <tr>
-					        <td>Katakana</td>
-					        <td>T1</td>
-					        <td>65</td>
-					        <td>75</td>
-					        <td>70</td>
-					        <td>65</td>
-					        <td>7.7</td>
-					        <td>6.7</td>
-					        <td>7.2</td>
-					      </tr>
-					      <tr>
-					        <td>Greeting</td>
-					        <td>T1</td>
-					        <td>65</td>
-					        <td>75</td>
-					        <td>70</td>
-					        <td>65</td>
-					        <td>70.7</td>
-					        <td>62.7</td>
-					        <td>73.2</td>
+					      <tr *ngFor="let goiData of goiDatas; let i = index">
+					        <td>{{ goiData.topicName }}</td>
+					        <td>{{ goiData.name }}</td>
+					        <td>{{ checkStudyTypes(goiData.studyTypes.GQ1) }}</td>
+					        <td>{{ checkStudyTypes(goiData.studyTypes.GQ2) }}</td>
+					        <td>{{ checkStudyTypes(goiData.studyTypes.GQ3) }}</td>
+					        <td>{{ checkStudyTypes(goiData.studyTypes.GQ4) }}</td>
+					        <td>{{ convertTwoDecimal(goiData.quizAverage) }}</td>
+					        <td>{{ convertTwoDecimal(goiData.allAverage) }}</td>
+					        <td>{{ convertTwoDecimal(goiData.passAverage) }}</td>
 					      </tr>
 					      </tbody>
 					    </table>
@@ -92,49 +70,27 @@
 					      <tr>
 					        <th>Item</th>
 					        <th>Topic</th>
-					        <th>GQ1</th>
-					        <th>GQ2</th>
-					        <th>GQ3</th>
-					        <th>GQ4</th>
+					        <th>BQ1</th>
+					        <th>BQ2</th>
+					        <th>BQ3</th>
+					        <th>BQ4</th>
 					        <th>Average</th>
 					        <th>Matome Test</th>
 					        <th>Pass Average</th>
 					      </tr>
 					      </thead>
 					      <tbody>
-					      <tr>
-					        <td>Hiragana2</td>
-					        <td>T1</td>
-					        <td>65</td>
-					        <td>75</td>
-					        <td>70</td>
-					        <td>65</td>
-					        <td>7.7</td>
-					        <td>6.7</td>
-					        <td>7.2</td>
-					      </tr>
-					      <tr>
-					        <td>Katakana2</td>
-					        <td>T1</td>
-					        <td>65</td>
-					        <td>75</td>
-					        <td>70</td>
-					        <td>65</td>
-					        <td>7.7</td>
-					        <td>6.7</td>
-					        <td>7.2</td>
-					      </tr>
-					      <tr>
-					        <td>Greeting2</td>
-					        <td>T1</td>
-					        <td>65</td>
-					        <td>75</td>
-					        <td>70</td>
-					        <td>65</td>
-					        <td>70.7</td>
-					        <td>62.7</td>
-					        <td>73.2</td>
-					      </tr>
+									<tr *ngFor="let bunpoData of bunpoDatas; let i = index">
+										<td>{{ bunpoData.topicName }}</td>
+										<td>{{ bunpoData.name }}</td>
+										<td>{{ checkStudyTypes(bunpoData.studyTypes.BQ1) }}</td>
+										<td>{{ checkStudyTypes(bunpoData.studyTypes.BQ2) }}</td>
+										<td>{{ checkStudyTypes(bunpoData.studyTypes.BQ3) }}</td>
+										<td>{{ checkStudyTypes(bunpoData.studyTypes.BQ4) }}</td>
+										<td>{{ convertTwoDecimal(bunpoData.quizAverage) }}</td>
+										<td>{{ convertTwoDecimal(bunpoData.allAverage) }}</td>
+										<td>{{ convertTwoDecimal(bunpoData.passAverage) }}</td>
+									</tr>
 					      </tbody>
 					    </table>
 					  </div>
@@ -156,49 +112,29 @@
 					      <tr>
 					        <th>Item</th>
 					        <th>Topic</th>
-					        <th>GQ1</th>
-					        <th>GQ2</th>
-					        <th>GQ3</th>
-					        <th>GQ4</th>
+					        <th>KQ1</th>
+					        <th>KQ2</th>
+					        <th>KQ3</th>
+									<th>KQ4</th>
+									<th>KQ5</th>
 					        <th>Average</th>
 					        <th>Matome Test</th>
 					        <th>Pass Average</th>
 					      </tr>
 					      </thead>
 					      <tbody>
-					      <tr>
-					        <td>Hiragana3</td>
-					        <td>T1</td>
-					        <td>65</td>
-					        <td>75</td>
-					        <td>70</td>
-					        <td>65</td>
-					        <td>7.7</td>
-					        <td>6.7</td>
-					        <td>7.2</td>
-					      </tr>
-					      <tr>
-					        <td>Katakana3</td>
-					        <td>T1</td>
-					        <td>65</td>
-					        <td>75</td>
-					        <td>70</td>
-					        <td>65</td>
-					        <td>7.7</td>
-					        <td>6.7</td>
-					        <td>7.2</td>
-					      </tr>
-					      <tr>
-					        <td>Greeting3</td>
-					        <td>T1</td>
-					        <td>65</td>
-					        <td>75</td>
-					        <td>70</td>
-					        <td>65</td>
-					        <td>70.7</td>
-					        <td>62.7</td>
-					        <td>73.2</td>
-					      </tr>
+									<tr *ngFor="let kanjiData of kanjiDatas; let i = index">
+										<td>{{ kanjiData.topicName }}</td>
+										<td>{{ kanjiData.name }}</td>
+										<td>{{ checkStudyTypes(kanjiData.studyTypes.KQ1) }}</td>
+										<td>{{ checkStudyTypes(kanjiData.studyTypes.KQ2) }}</td>
+										<td>{{ checkStudyTypes(kanjiData.studyTypes.KQ3) }}</td>
+										<td>{{ checkStudyTypes(kanjiData.studyTypes.KQ4) }}</td>
+										<td>{{ checkStudyTypes(kanjiData.studyTypes.KQ5) }}</td>
+										<td>{{ convertTwoDecimal(kanjiData.quizAverage) }}</td>
+										<td>{{ convertTwoDecimal(kanjiData.allAverage) }}</td>
+										<td>{{ convertTwoDecimal(kanjiData.passAverage) }}</td>
+									</tr>
 					      </tbody>
 					    </table>
 					  </div>
@@ -222,30 +158,14 @@
 					        <th>Question</th>
 					        <th>Taken by</th>
 					        <th>Passed</th>
-					        <th>Average</th>
 					      </tr>
 					      </thead>
 					      <tbody>
-					      <tr>
-					        <td>T1</td>
-					        <td>Q1</td>
-					        <td>75</td>
-					        <td>6.7</td>
-					        <td>7.2</td>
-					      </tr>
-					      <tr>
-					        <td>T1</td>
-					        <td>Q1</td>
-					        <td>75</td>
-					        <td>6.7</td>
-					        <td>7.2</td>
-					      </tr>
-					      <tr>
-					        <td>T1</td>
-					        <td>Q1</td>
-					        <td>75</td>
-					        <td>6.7</td>
-					        <td>7.2</td>
+					      <tr *ngFor="let listeningData of listeningDatas; let i = index">
+					        <td>{{ listeningData.topic }}</td>
+					        <td>{{ listeningData.code }}</td>
+					        <td>{{ listeningData.count }}</td>
+					        <td>{{ listeningData.pass }}</td>
 					      </tr>
 					      </tbody>
 					    </table>
@@ -270,31 +190,15 @@
 					        <th>Question</th>
 					        <th>Taken by</th>
 					        <th>Passed</th>
-					        <th>Average</th>
 					      </tr>
 					      </thead>
 					      <tbody>
-					      <tr>
-					        <td>T2</td>
-					        <td>Q1</td>
-					        <td>75</td>
-					        <td>6.7</td>
-					        <td>7.2</td>
-					      </tr>
-					      <tr>
-					        <td>T2</td>
-					        <td>Q1</td>
-					        <td>75</td>
-					        <td>6.7</td>
-					        <td>7.2</td>
-					      </tr>
-					      <tr>
-					        <td>T2</td>
-					        <td>Q1</td>
-					        <td>75</td>
-					        <td>6.7</td>
-					        <td>7.2</td>
-					      </tr>
+								<tr *ngFor="let readingData of readingDatas; let i = index">
+									<td>{{ readingData.topic }}</td>
+									<td>{{ readingData.code }}</td>
+									<td>{{ readingData.count }}</td>
+									<td>{{ readingData.pass }}</td>
+								</tr>
 					      </tbody>
 					    </table>
 					  </div>

@@ -16,27 +16,23 @@
 					      <thead>
 					      <tr>
 					        <th>人数</th>
-					        <th>18～20歳</th>
-					        <th>21～25歳</th>
-					        <th>26～30歳</th>
-					        <th>31～35歳</th>
-					        <th>36～40歳</th>
-					        <th>41歳以上</th>
+					        <th>～20歳</th>
+					        <th>20～29歳</th>
+					        <th>30～39歳</th>
+					        <th>40～49歳</th>
+					        <th>50歳～</th>
 					        <th>男性</th>
 					        <th>女性</th>
 					      </tr>
 					      </thead>
 					      <tbody>
 					      <tr>
-					        <td>20</td>
-					        <td>32</td>
-					        <td>12</td>
-					        <td>5</td>
-					        <td>22</td>
-					        <td>16</td>
-					        <td>3</td>
-					        <td>34</td>
-					        <td>23</td>
+									<td>{{ total }}</td>
+									<ng-container *ngFor="let category of categories; let i = index">
+											<td>{{ category.total }}</td>
+									</ng-container>
+					        <td>{{ male }}</td>
+					        <td>{{ female }}</td>
 					      </tr>
 					      </tbody>
 					    </table>
@@ -54,7 +50,6 @@
 					        <th>高校卒業</th>
 					        <th>大学在学</th>
 					        <th>大学卒業</th>
-					        <th>大学院</th>
 					        <th>外国語系</th>
 					        <th>経済・経営系</th>
 					        <th>その他文系</th>
@@ -63,27 +58,27 @@
 					        <th>仕事で必要だから</th>
 					        <th>会社の命令だから</th>
 					        <th>キャリアアップしたいから</th>
-					        <th>留学したいから/th>
+					        <th>留学したいから</th>
 					        <th>その他</th>
 					      </tr>
 					      </thead>
 					      <tbody>
-					      <tr>
-					        <td>20</td>
-					        <td>32</td>
-					        <td>12</td>
-					        <td>5</td>
-					        <td>22</td>
-					        <td>16</td>
-					        <td>3</td>
-					        <td>34</td>
-					        <td>23</td>
-					        <td>20</td>
-					        <td>32</td>
-					        <td>12</td>
-					        <td>5</td>
-					        <td>22</td>
-					        <td>16</td>
+									<tr>
+					      <!-- <tr *ngFor="let extraOverview of extraOverviews; let i = index"> -->
+					        <td>{{ extraOverviews.hStudent }}</td>
+					        <td>{{ extraOverviews.hgStudent }}</td>
+					        <td>{{ extraOverviews.uStudent }}</td>
+					        <td>{{ extraOverviews.ugStudent }}</td>
+					        <td>{{ extraOverviews.major1 }}</td>
+					        <td>{{ extraOverviews.major2 }}</td>
+					        <td>{{ extraOverviews.major3 }}</td>
+					        <td>{{ extraOverviews.major4 }}</td>
+					        <td>{{ extraOverviews.major5 }}</td>
+					        <td>{{ extraOverviews.reason1 }}</td>
+					        <td>{{ extraOverviews.reason2 }}</td>
+					        <td>{{ extraOverviews.reason3 }}</td>
+					        <td>{{ extraOverviews.reason4 }}</td>
+					        <td>{{ extraOverviews.reason6 }}</td>
 					      </tr>
 					      </tbody>
 					    </table>
