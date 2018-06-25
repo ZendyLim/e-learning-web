@@ -139,77 +139,174 @@
           </tr>
           <tr>
             <td>トピック１</td>
-            <td>{{ countTotal(studyArr.T004.VOCABULARY.correct , studyArr.T004.VOCABULARY.mistake) }}% </td>
-            <td>{{ countTotal(studyArr.T004.KANJI.correct , studyArr.T004.KANJI.mistake) }}%</td>
-            <td>{{ countTotal(studyArr.T004.GRAMMAR.correct , studyArr.T004.GRAMMAR.mistake) }}%</td>
-            <td>{{ countTotal(studyArr.T004.LISTENING.correct , studyArr.T004.LISTENING.mistake) }}%</td>
-            <td>{{ countTotal(studyArr.T004.READING.correct , studyArr.T004.READING.mistake) }}%</td>
-            <td>{{ getAllcountTotal('T004') }}%</td>
+            <td class="text-center">{{ countTotal(studyArr.T004.VOCABULARY.correct , studyArr.T004.VOCABULARY.mistake) }}% <br/>
+                {{ studyArr.T004.VOCABULARY.correct }}/{{ studyArr.T004.VOCABULARY.correct + studyArr.T004.VOCABULARY.mistake }}
+            </td>
+            <td class="text-center">{{ countTotal(studyArr.T004.KANJI.correct , studyArr.T004.KANJI.mistake) }}%<br/>
+                {{ studyArr.T004.KANJI.correct }}/{{ studyArr.T004.KANJI.correct + studyArr.T004.KANJI.mistake }}
+            </td>
+            <td class="text-center">{{ countTotal(studyArr.T004.GRAMMAR.correct , studyArr.T004.GRAMMAR.mistake) }}%<br/>
+                {{ studyArr.T004.GRAMMAR.correct }}/{{ studyArr.T004.GRAMMAR.correct + studyArr.T004.GRAMMAR.mistake }}
+            </td>
+            <td class="text-center">{{ countTotal(studyArr.T004.LISTENING.correct , studyArr.T004.LISTENING.mistake) }}%<br/>
+                {{ studyArr.T004.GRAMMAR.correct }}/{{ studyArr.T004.GRAMMAR.correct + studyArr.T004.GRAMMAR.mistake }}
+            </td>
+            <td class="text-center">{{ countTotal(studyArr.T004.READING.correct , studyArr.T004.READING.mistake) }}%<br/>
+                {{ studyArr.T004.GRAMMAR.correct }}/{{ studyArr.T004.GRAMMAR.correct + studyArr.T004.GRAMMAR.mistake }}
+            </td>
+            <td class="text-center">{{ getAllcountTotal('T004') }}%<br/>
+                {{ printTotalAll('T004') }}
+            </td>
           </tr>
           <tr>
             <td>トピック２</td>
-            <td>{{ countTotal(studyArr.T005.VOCABULARY.correct , studyArr.T005.VOCABULARY.mistake) }}% </td>
-            <td>{{ countTotal(studyArr.T005.KANJI.correct , studyArr.T005.KANJI.mistake) }}%</td>
-            <td>{{ countTotal(studyArr.T005.GRAMMAR.correct , studyArr.T005.GRAMMAR.mistake) }}%</td>
-            <td>{{ countTotal(studyArr.T005.LISTENING.correct , studyArr.T005.LISTENING.mistake) }}%</td>
-            <td>{{ countTotal(studyArr.T005.READING.correct , studyArr.T005.READING.mistake) }}%</td>
-            <td>{{ getAllcountTotal('T005') }}%</td>
+            <td class="text-center">{{ countTotal(studyArr.T005.VOCABULARY.correct , studyArr.T005.VOCABULARY.mistake) }}% <br/>
+                {{ studyArr.T005.VOCABULARY.correct }}/{{ studyArr.T005.VOCABULARY.correct + studyArr.T005.VOCABULARY.mistake }}
+            </td>
+            <td class="text-center">{{ countTotal(studyArr.T005.KANJI.correct , studyArr.T005.KANJI.mistake) }}%<br/>
+                {{ studyArr.T005.KANJI.correct }}/{{ studyArr.T005.KANJI.correct + studyArr.T005.KANJI.mistake }}
+            </td>
+            <td class="text-center">{{ countTotal(studyArr.T005.GRAMMAR.correct , studyArr.T005.GRAMMAR.mistake) }}%<br/>
+                {{ studyArr.T005.GRAMMAR.correct }}/{{ studyArr.T005.GRAMMAR.correct + studyArr.T005.GRAMMAR.mistake }}
+            </td>
+            <td class="text-center">{{ countTotal(studyArr.T005.LISTENING.correct , studyArr.T005.LISTENING.mistake) }}%<br/>
+                {{ studyArr.T005.LISTENING.correct }}/{{ studyArr.T005.LISTENING.correct + studyArr.T005.LISTENING.mistake }}
+            </td>
+            <td class="text-center">{{ countTotal(studyArr.T005.READING.correct , studyArr.T005.READING.mistake) }}%<br/>
+                {{ studyArr.T005.READING.correct }}/{{ studyArr.T005.READING.correct + studyArr.T005.READING.mistake }}
+            </td>
+            <td class="text-center">{{ getAllcountTotal('T005') }}%<br/>
+                {{ printTotalAll('T005') }}
+            </td>
           </tr>
           <tr>
             <td>トピック３</td>
-            <td>{{ countTotal(studyArr.T006.VOCABULARY.correct , studyArr.T006.VOCABULARY.mistake) }}% </td>
-            <td>{{ countTotal(studyArr.T006.KANJI.correct , studyArr.T006.KANJI.mistake) }}%</td>
-            <td>{{ countTotal(studyArr.T006.GRAMMAR.correct , studyArr.T006.GRAMMAR.mistake) }}%</td>
-            <td>{{ countTotal(studyArr.T006.LISTENING.correct , studyArr.T006.LISTENING.mistake) }}%</td>
-            <td>{{ countTotal(studyArr.T006.READING.correct , studyArr.T006.READING.mistake) }}%</td>
-            <td>{{ getAllcountTotal('T006') }}%</td>
+            <td class="text-center">{{ countTotal(studyArr.T006.VOCABULARY.correct , studyArr.T006.VOCABULARY.mistake) }}% <br/>
+                {{ studyArr.T006.VOCABULARY.correct }}/{{ studyArr.T006.VOCABULARY.correct + studyArr.T006.VOCABULARY.mistake }}
+            </td>
+            <td class="text-center">{{ countTotal(studyArr.T006.KANJI.correct , studyArr.T006.KANJI.mistake) }}%<br/>
+                {{ studyArr.T006.KANJI.correct }}/{{ studyArr.T006.KANJI.correct + studyArr.T006.KANJI.mistake }}
+            </td>
+            <td class="text-center">{{ countTotal(studyArr.T006.GRAMMAR.correct , studyArr.T006.GRAMMAR.mistake) }}%<br/>
+                {{ studyArr.T006.GRAMMAR.correct }}/{{ studyArr.T006.GRAMMAR.correct + studyArr.T006.GRAMMAR.mistake }}
+            </td>
+            <td class="text-center">{{ countTotal(studyArr.T006.LISTENING.correct , studyArr.T006.LISTENING.mistake) }}%<br/>
+                {{ studyArr.T006.LISTENING.correct }}/{{ studyArr.T006.LISTENING.correct + studyArr.T006.LISTENING.mistake }}
+            </td>
+            <td class="text-center">{{ countTotal(studyArr.T006.READING.correct , studyArr.T006.READING.mistake) }}%<br/>
+                {{ studyArr.T006.READING.correct }}/{{ studyArr.T006.READING.correct + studyArr.T006.READING.mistake }}
+            </td>
+            <td class="text-center">{{ getAllcountTotal('T006') }}%<br/>
+                {{ printTotalAll('T006') }}
+            </td>
           </tr>
           <tr>
             <td>トピック４</td>
-            <td>{{ countTotal(studyArr.T007.VOCABULARY.correct , studyArr.T007.VOCABULARY.mistake) }}% </td>
-            <td>{{ countTotal(studyArr.T007.KANJI.correct , studyArr.T007.KANJI.mistake) }}%</td>
-            <td>{{ countTotal(studyArr.T007.GRAMMAR.correct , studyArr.T007.GRAMMAR.mistake) }}%</td>
-            <td>{{ countTotal(studyArr.T007.LISTENING.correct , studyArr.T007.LISTENING.mistake) }}%</td>
-            <td>{{ countTotal(studyArr.T007.READING.correct , studyArr.T007.READING.mistake) }}%</td>
-            <td>{{ getAllcountTotal('T007') }}%</td>
+            <td class="text-center">{{ countTotal(studyArr.T007.VOCABULARY.correct , studyArr.T007.VOCABULARY.mistake) }}% <br/>
+                {{ studyArr.T007.VOCABULARY.correct }}/{{ studyArr.T007.VOCABULARY.correct + studyArr.T007.VOCABULARY.mistake }}
+            </td>
+            <td class="text-center">{{ countTotal(studyArr.T007.KANJI.correct , studyArr.T007.KANJI.mistake) }}%<br/>
+                {{ studyArr.T007.KANJI.correct }}/{{ studyArr.T007.KANJI.correct + studyArr.T007.KANJI.mistake }}
+            </td>
+            <td class="text-center">{{ countTotal(studyArr.T007.GRAMMAR.correct , studyArr.T007.GRAMMAR.mistake) }}%<br/>
+                {{ studyArr.T007.GRAMMAR.correct }}/{{ studyArr.T007.GRAMMAR.correct + studyArr.T007.GRAMMAR.mistake }}
+            </td>
+            <td class="text-center">{{ countTotal(studyArr.T007.LISTENING.correct , studyArr.T007.LISTENING.mistake) }}%<br/>
+                {{ studyArr.T007.LISTENING.correct }}/{{ studyArr.T007.LISTENING.correct + studyArr.T007.LISTENING.mistake }}
+            </td>
+            <td class="text-center">{{ countTotal(studyArr.T007.READING.correct , studyArr.T007.READING.mistake) }}%<br/>
+                {{ studyArr.T007.READING.correct }}/{{ studyArr.T007.READING.correct + studyArr.T007.READING.mistake }}
+            </td>
+            <td class="text-center">{{ getAllcountTotal('T007') }}%<br/>
+                {{ printTotalAll('T007') }}
+            </td>
           </tr>
           <tr>
             <td>トピック５</td>
-            <td>{{ countTotal(studyArr.T009.VOCABULARY.correct , studyArr.T009.VOCABULARY.mistake) }}% </td>
-            <td>{{ countTotal(studyArr.T009.KANJI.correct , studyArr.T009.KANJI.mistake) }}%</td>
-            <td>{{ countTotal(studyArr.T009.GRAMMAR.correct , studyArr.T009.GRAMMAR.mistake) }}%</td>
-            <td>{{ countTotal(studyArr.T009.LISTENING.correct , studyArr.T009.LISTENING.mistake) }}%</td>
-            <td>{{ countTotal(studyArr.T009.READING.correct , studyArr.T009.READING.mistake) }}%</td>
-            <td>{{ getAllcountTotal('T009') }}%</td>
+            <td class="text-center">{{ countTotal(studyArr.T009.VOCABULARY.correct , studyArr.T009.VOCABULARY.mistake) }}% <br/>
+                {{ studyArr.T009.VOCABULARY.correct }}/{{ studyArr.T009.VOCABULARY.correct + studyArr.T009.VOCABULARY.mistake }}
+            </td>
+            <td class="text-center">{{ countTotal(studyArr.T009.KANJI.correct , studyArr.T009.KANJI.mistake) }}%<br/>
+                {{ studyArr.T009.KANJI.correct }}/{{ studyArr.T009.KANJI.correct + studyArr.T009.KANJI.mistake }}
+            </td>
+            <td class="text-center">{{ countTotal(studyArr.T009.GRAMMAR.correct , studyArr.T009.GRAMMAR.mistake) }}%<br/>
+                {{ studyArr.T009.GRAMMAR.correct }}/{{ studyArr.T009.GRAMMAR.correct + studyArr.T009.GRAMMAR.mistake }}
+            </td>
+            <td class="text-center">{{ countTotal(studyArr.T009.LISTENING.correct , studyArr.T009.LISTENING.mistake) }}%<br/>
+                {{ studyArr.T009.LISTENING.correct }}/{{ studyArr.T009.LISTENING.correct + studyArr.T009.LISTENING.mistake }}
+            </td>
+            <td class="text-center">{{ countTotal(studyArr.T009.READING.correct , studyArr.T009.READING.mistake) }}%<br/>
+                {{ studyArr.T009.READING.correct }}/{{ studyArr.T009.READING.correct + studyArr.T009.READING.mistake }}
+            </td>
+            <td class="text-center">{{ getAllcountTotal('T009') }}%<br/>
+                {{ printTotalAll('T009') }}
+            </td>
           </tr>
           <tr>
             <td>トピック６</td>
-            <td>{{ countTotal(studyArr.T010.VOCABULARY.correct , studyArr.T010.VOCABULARY.mistake) }}% </td>
-            <td>{{ countTotal(studyArr.T010.KANJI.correct , studyArr.T010.KANJI.mistake) }}%</td>
-            <td>{{ countTotal(studyArr.T010.GRAMMAR.correct , studyArr.T010.GRAMMAR.mistake) }}%</td>
-            <td>{{ countTotal(studyArr.T010.LISTENING.correct , studyArr.T010.LISTENING.mistake) }}%</td>
-            <td>{{ countTotal(studyArr.T010.READING.correct , studyArr.T010.READING.mistake) }}%</td>
-            <td>{{ getAllcountTotal('T010') }}%</td>
+            <td class="text-center">{{ countTotal(studyArr.T010.VOCABULARY.correct , studyArr.T010.VOCABULARY.mistake) }}% <br/>
+                {{ studyArr.T010.VOCABULARY.correct }}/{{ studyArr.T010.VOCABULARY.correct + studyArr.T010.VOCABULARY.mistake }}
+            </td>
+            <td class="text-center">{{ countTotal(studyArr.T010.KANJI.correct , studyArr.T010.KANJI.mistake) }}%<br/>
+                {{ studyArr.T010.KANJI.correct }}/{{ studyArr.T010.KANJI.correct + studyArr.T010.KANJI.mistake }}
+            </td>
+            <td class="text-center">{{ countTotal(studyArr.T010.GRAMMAR.correct , studyArr.T010.GRAMMAR.mistake) }}%<br/>
+                {{ studyArr.T010.GRAMMAR.correct }}/{{ studyArr.T010.GRAMMAR.correct + studyArr.T010.GRAMMAR.mistake }}
+            </td>
+            <td class="text-center">{{ countTotal(studyArr.T010.LISTENING.correct , studyArr.T010.LISTENING.mistake) }}%<br/>
+                {{ studyArr.T010.LISTENING.correct }}/{{ studyArr.T010.LISTENING.correct + studyArr.T010.LISTENING.mistake }}
+            </td>
+            <td class="text-center">{{ countTotal(studyArr.T010.READING.correct , studyArr.T010.READING.mistake) }}%<br/>
+                {{ studyArr.T010.READING.correct }}/{{ studyArr.T010.READING.correct + studyArr.T010.READING.mistake }}
+            </td>
+            <td class="text-center">{{ getAllcountTotal('T010') }}%<br/>
+                {{ printTotalAll('T010') }}
+            </td>
           </tr>
           <tr>
             <td>トピック７</td>
-            <td>{{ countTotal(studyArr.T011.VOCABULARY.correct , studyArr.T011.VOCABULARY.mistake) }}% </td>
-            <td>{{ countTotal(studyArr.T011.KANJI.correct , studyArr.T011.KANJI.mistake) }}%</td>
-            <td>{{ countTotal(studyArr.T011.GRAMMAR.correct , studyArr.T011.GRAMMAR.mistake) }}%</td>
-            <td>{{ countTotal(studyArr.T011.LISTENING.correct , studyArr.T011.LISTENING.mistake) }}%</td>
-            <td>{{ countTotal(studyArr.T011.READING.correct , studyArr.T011.READING.mistake) }}%</td>
-            <td>{{ getAllcountTotal('T011') }}%</td>
+            <td class="text-center">{{ countTotal(studyArr.T011.VOCABULARY.correct , studyArr.T011.VOCABULARY.mistake) }}% <br/>
+                {{ studyArr.T011.VOCABULARY.correct }}/{{ studyArr.T011.VOCABULARY.correct + studyArr.T011.VOCABULARY.mistake }}
+            </td>
+            <td class="text-center">{{ countTotal(studyArr.T011.KANJI.correct , studyArr.T011.KANJI.mistake) }}%<br/>
+                {{ studyArr.T011.KANJI.correct }}/{{ studyArr.T011.KANJI.correct + studyArr.T011.KANJI.mistake }}
+            </td>
+            <td class="text-center">{{ countTotal(studyArr.T011.GRAMMAR.correct , studyArr.T011.GRAMMAR.mistake) }}%<br/>
+                {{ studyArr.T011.GRAMMAR.correct }}/{{ studyArr.T011.GRAMMAR.correct + studyArr.T011.GRAMMAR.mistake }}
+            </td>
+            <td class="text-center">{{ countTotal(studyArr.T011.LISTENING.correct , studyArr.T011.LISTENING.mistake) }}%<br/>
+                {{ studyArr.T011.LISTENING.correct }}/{{ studyArr.T011.LISTENING.correct + studyArr.T011.LISTENING.mistake }}
+            </td>
+            <td class="text-center">{{ countTotal(studyArr.T011.READING.correct , studyArr.T011.READING.mistake) }}%<br/>
+                {{ studyArr.T011.READING.correct }}/{{ studyArr.T011.READING.correct + studyArr.T011.READING.mistake }}
+            </td>
+            <td class="text-center">{{ getAllcountTotal('T011') }}%<br/>
+                {{ printTotalAll('T011') }}
+            </td>
           </tr>
           <tr>
             <td>トピック８</td>
-            <td>{{ countTotal(studyArr.T012.VOCABULARY.correct , studyArr.T012.VOCABULARY.mistake) }}% </td>
-            <td>{{ countTotal(studyArr.T012.KANJI.correct , studyArr.T012.KANJI.mistake) }}%</td>
-            <td>{{ countTotal(studyArr.T012.GRAMMAR.correct , studyArr.T012.GRAMMAR.mistake) }}%</td>
-            <td>{{ countTotal(studyArr.T012.LISTENING.correct , studyArr.T012.LISTENING.mistake) }}%</td>
-            <td>{{ countTotal(studyArr.T012.READING.correct , studyArr.T012.READING.mistake) }}%</td>
-            <td>{{ getAllcountTotal('T012') }}%</td>
+            <td class="text-center">{{ countTotal(studyArr.T012.VOCABULARY.correct , studyArr.T012.VOCABULARY.mistake) }}% <br/>
+                {{ studyArr.T012.VOCABULARY.correct }}/{{ studyArr.T012.VOCABULARY.correct + studyArr.T012.VOCABULARY.mistake }}
+            </td>
+            <td class="text-center">{{ countTotal(studyArr.T012.KANJI.correct , studyArr.T012.KANJI.mistake) }}%<br/>
+                {{ studyArr.T012.KANJI.correct }}/{{ studyArr.T012.KANJI.correct + studyArr.T012.KANJI.mistake }}
+            </td>
+            <td class="text-center">{{ countTotal(studyArr.T012.GRAMMAR.correct , studyArr.T012.GRAMMAR.mistake) }}%<br/>
+                {{ studyArr.T012.GRAMMAR.correct }}/{{ studyArr.T012.GRAMMAR.correct + studyArr.T012.GRAMMAR.mistake }}
+            </td>
+            <td class="text-center">{{ countTotal(studyArr.T012.LISTENING.correct , studyArr.T012.LISTENING.mistake) }}%<br/>
+                {{ studyArr.T012.LISTENING.correct }}/{{ studyArr.T012.LISTENING.correct + studyArr.T012.LISTENING.mistake }}
+            </td>
+            <td class="text-center">{{ countTotal(studyArr.T012.READING.correct , studyArr.T012.READING.mistake) }}%<br/>
+                {{ studyArr.T012.LISTENING.correct }}/{{ studyArr.T012.LISTENING.correct + studyArr.T012.LISTENING.mistake }}
+            </td>
+            <td class="text-center">{{ getAllcountTotal('T012') }}%<br/>
+                {{ printTotalAll('T012') }}
+            </td>
           </tr>
         </table>
+        <span>Note : Total taken correct question / Total taken question</span>
       </div>
     </div>
   </div>
