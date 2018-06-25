@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AdminHomeService} from "../home/admin-home.service";
+import {AdminStudentService} from "./admin-student.service";
 
 @Component({
   selector: 'app-admin-student',
@@ -10,17 +11,19 @@ export class AdminStudentComponent implements OnInit {
 
   corporate_users = [];
   categories = [];
+  extraOverviews = [];
   loading = false;
   total = 0;
   male = 0;
   female = 0;
 
-  constructor(private _homeService:AdminHomeService) {
+  constructor(private _homeService:AdminHomeService, private _studentService:AdminStudentService) {
 
   }
 
   ngOnInit() {
     this.getStudentsOverview();
+    this.getStudentsOverviewExtra();
   }
 
   getStudentsOverview() {
@@ -35,6 +38,17 @@ export class AdminStudentComponent implements OnInit {
       })
   }
 
+  getStudentsOverviewExtra() {
+    this.loading = true;
+    this._studentService.getStudentsOverviewExtra()
+      .subscribe((result) => {
+        this.extraOverviews = result.body.categories;
+        this.loading = false;
+      }, (err) => {
+        console.error(err);
+      })
+  }
+
   processStudentOverview(){
     let cat = this.categories;
 
@@ -43,8 +57,6 @@ export class AdminStudentComponent implements OnInit {
       this.male += cat[i].male;
       this.female += cat[i].female;
     }
-
-    
   }
 
 }

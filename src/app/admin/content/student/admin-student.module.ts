@@ -4,6 +4,7 @@ import { AdminStudentComponent } from './admin-student.component';
 import {AdminHomeService} from "../home/admin-home.service";
 import {RouterModule, Routes} from "@angular/router";
 import { HttpClientModule } from '@angular/common/http';
+import { AdminStudentService } from './admin-student.service';
 const routes: Routes = [
   {
     path: '',
@@ -17,7 +18,7 @@ const routes: Routes = [
     HttpClientModule,
     RouterModule.forChild(routes)
   ],
-  providers: [AdminHomeService],
+  providers: [AdminHomeService, AdminStudentService],
   declarations: [AdminStudentComponent]
 })
 export class AdminStudentModule { }
