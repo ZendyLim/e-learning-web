@@ -501,7 +501,7 @@ export class CorporateDetailComponent implements OnInit {
   }
 
   countTotal(correct, mistake){
-    if(mistake == 0){
+    if((mistake + correct) == 0){
       return 0;
     }else{
       return Math.floor((correct / (correct + mistake)) * 100);
@@ -553,7 +553,11 @@ export class CorporateDetailComponent implements OnInit {
   getAllcountTotal(val){
     return Math.floor((this.countTotal(this.studyArr[val].VOCABULARY.correct , this.studyArr[val].VOCABULARY.mistake) + this.countTotal(this.studyArr[val].KANJI.correct , this.studyArr[val].KANJI.mistake) + this.countTotal(this.studyArr[val].GRAMMAR.correct , this.studyArr[val].GRAMMAR.mistake) + this.countTotal(this.studyArr[val].LISTENING.correct , this.studyArr[val].LISTENING.mistake) + this.countTotal(this.studyArr[val].READING.correct , this.studyArr[val].READING.mistake)) / 7);
   }
-   //formating date
+  printTotalAll(val){
+    return (this.studyArr[val].VOCABULARY.correct + this.studyArr[val].KANJI.correct + this.studyArr[val].GRAMMAR.correct + this.studyArr[val].LISTENING.correct + this.studyArr[val].READING.correct) + "/" + (this.studyArr[val].VOCABULARY.correct + this.studyArr[val].VOCABULARY.mistake + this.studyArr[val].KANJI.correct + this.studyArr[val].KANJI.mistake + this.studyArr[val].GRAMMAR.correct + this.studyArr[val].GRAMMAR.mistake + this.studyArr[val].LISTENING.correct + this.studyArr[val].LISTENING.mistake + this.studyArr[val].READING.correct + this.studyArr[val].READING.mistake);
+  }
+
+  //formating date
    formatDate(date){
     var sepDate = new Date(date);
     var year = sepDate.getFullYear();
